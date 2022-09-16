@@ -1,30 +1,99 @@
-<header class="w-full h-24 bg-[#f7f6fd]">
-    <div class="container h-full mx-auto flex items-center justify-between">
-        <h1 class="text-[#50b0ae] text-3xl font-bold"><a href="/"> Home </a></h1>
-        <nav>
-            <ul class="flex space-x-8 text-lg font-bold">
-                <li class="hover:text-[#50b0ae]">
-                    <a href="/about"> Über mich </a>
-                </li>
-                <li class="hover:text-[#50b0ae]">
-                    <a href="/yoga"> Yoga </a>
-                </li>
-                <li class="hover:text-[#50b0ae]">
-                    <a href="/healing-arts"> Healing Arts </a>
-                </li>
-                <li class="hover:text-[#50b0ae]">
-                    <a href="/meditation"> Meditation </a>
-                </li>
-                <li class="hover:text-[#50b0ae]">
-                    <a href="/retreats-events"> Retreats & Events </a>
-                </li>
-                <li class="hover:text-[#50b0ae]">
-                    <a href="/studio/timetable"> Studio </a>
-                </li>
-                <li class="hover:text-[#50b0ae]">
-                    <a href="/contact"> Kontakt </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header>
+<script>
+	let displayMobileNav = false;
+
+	function openMobileMenu() {
+        console.log('KLIIIIICK')
+		displayMobileNav = true;
+	}
+</script>
+
+<section>
+	<nav class="py-10" data-config-="">
+		<div class="container px-4 mx-auto">
+			<div class="flex items-center justify-between relative">
+				<a class="inline-block" href="#">
+					<img src="pstls-assets/logos/pstls-logo-md.svg" alt="" width="116" />
+				</a>
+				<button on:click={openMobileMenu} class="lg:hidden navbar-burger">
+					<svg
+						width="24"
+						height="24"
+						viewbox="0 0 24 24"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M3.5 7C3.22386 7 3 6.77614 3 6.5C3 6.22386 3.22386 6 3.5 6H20.5C20.7761 6 21 6.22386 21 6.5C21 6.77614 20.7761 7 20.5 7H3.5ZM3.5 12C3.22386 12 3 11.7761 3 11.5C3 11.2239 3.22386 11 3.5 11H20.5C20.7761 11 21 11.2239 21 11.5C21 11.7761 20.7761 12 20.5 12H3.5ZM3 16.5C3 16.7761 3.22386 17 3.5 17H20.5C20.7761 17 21 16.7761 21 16.5C21 16.2239 20.7761 16 20.5 16H3.5C3.22386 16 3 16.2239 3 16.5Z"
+							fill="#000"
+						/>
+					</svg>
+				</button>
+				<div class="hidden lg:block ml-auto mr-14">
+					<ul class="inline-flex">
+						<li class="mr-8">
+							<a class="inline-block font-bold hover:text-gray-900" aria-current="page" href="#"
+								>Home</a
+							>
+						</li>
+						<li class="mr-8">
+							<a class="inline-block font-bold hover:text-gray-900" href="#">Products</a>
+						</li>
+						<li class="mr-8">
+							<a class="inline-block font-bold hover:text-gray-900" href="#">Resources</a>
+						</li>
+						<li><a class="inline-block font-bold hover:text-gray-900" href="#">Pricing</a></li>
+					</ul>
+				</div>
+				<div class="hidden lg:block">
+					<a class="inline-block px-8 py-3 text-white font-bold bg-black hover:bg-gray-900" href="#"
+						>Contact Us</a
+					>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<div class:hidden={!displayMobileNav} class="navbar-menu fixed top-0 left-0 bottom-0 w-3/4 max-w-xs z-50" data-config-="">
+		<div class="navbar-backdrop fixed inset-0 bg-black bg-opacity-75" />
+		<nav class="relative flex flex-col h-full p-8 bg-white">
+			<div class="flex items-center justify-between mb-12">
+				<a class="items-center" href="#">
+					<img src="pstls-assets/logos/pstls-logo-md.svg" alt="" width="102" />
+				</a>
+				<button
+					class="inline-block navbar-close focus:outline-none"
+					type="button"
+					aria-label="Close"
+				>
+					<img src="pstls-assets/images/navigations/x2.svg" alt="" />
+				</button>
+			</div>
+			<div>
+				<ul>
+					<li class="py-3">
+						<a class="inline-block font-bold hover:text-gray-900" href="#">Home</a>
+					</li>
+					<li class="py-3">
+						<a class="inline-block font-bold hover:text-gray-900" href="#">Products</a>
+					</li>
+					<li class="py-3">
+						<a class="inline-block font-bold hover:text-gray-900" href="#">Resources</a>
+					</li>
+					<li class="py-3">
+						<a class="inline-block font-bold hover:text-gray-900" href="#">Pricing</a>
+					</li>
+				</ul>
+			</div>
+			<div class="mt-auto">
+				<div>
+					<a class="block py-3 text-center font-bold" href="#">Log In</a><a
+						class="block px-8 py-3 text-center text-white font-bold bg-black hover:bg-gray-900"
+						href="#">Sign Up</a
+					>
+				</div>
+			</div>
+		</nav>
+	</div>
+</section>
