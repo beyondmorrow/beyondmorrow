@@ -1,9 +1,8 @@
 <script>
 	let displayMobileNav = false;
 
-	function openMobileMenu() {
-        console.log('KLIIIIICK')
-		displayMobileNav = true;
+	function handleMobileNav() {
+		displayMobileNav = !displayMobileNav;
 	}
 </script>
 
@@ -11,10 +10,10 @@
 	<nav class="py-10" data-config-="">
 		<div class="container px-4 mx-auto">
 			<div class="flex items-center justify-between relative">
-				<a class="inline-block" href="#">
+				<a class="inline-block" href="/">
 					<img src="pstls-assets/logos/pstls-logo-md.svg" alt="" width="116" />
 				</a>
-				<button on:click={openMobileMenu} class="lg:hidden navbar-burger">
+				<button on:click={handleMobileNav} class="lg:hidden navbar-burger">
 					<svg
 						width="24"
 						height="24"
@@ -32,68 +31,57 @@
 				</button>
 				<div class="hidden lg:block ml-auto mr-14">
 					<ul class="inline-flex">
-						<li class="mr-8">
-							<a class="inline-block font-bold hover:text-gray-900" aria-current="page" href="#"
-								>Home</a
-							>
-						</li>
-						<li class="mr-8">
-							<a class="inline-block font-bold hover:text-gray-900" href="#">Products</a>
-						</li>
-						<li class="mr-8">
-							<a class="inline-block font-bold hover:text-gray-900" href="#">Resources</a>
-						</li>
-						<li><a class="inline-block font-bold hover:text-gray-900" href="#">Pricing</a></li>
+						<li class="mr-8"><a class="inline-block font-bold hover:text-gray-900" aria-current="page" href="/">Home</a></li>
+						<li class="mr-8"><a class="inline-block font-bold hover:text-gray-900" href="/about">Über mich</a></li>
+						<li class="mr-8"><a class="inline-block font-bold hover:text-gray-900" href="/yoga">Yoga</a></li>
+						<li class="mr-8"><a class="inline-block font-bold hover:text-gray-900" href="/meditation">Meditation</a></li>
+                        <li class="mr-8"><a class="inline-block font-bold hover:text-gray-900" href="/healing-arts">Healing Arts</a></li>
+                        <li class="mr-8"><a class="inline-block font-bold hover:text-gray-900" href="/retreats-events">Reatreats & Events</a></li>
+                        <li class="mr-8"><a class="inline-block font-bold hover:text-gray-900" href="/contact">Kontakt</a></li>
 					</ul>
 				</div>
 				<div class="hidden lg:block">
-					<a class="inline-block px-8 py-3 text-white font-bold bg-black hover:bg-gray-900" href="#"
-						>Contact Us</a
+					<a class="inline-block px-8 py-3 text-white font-bold bg-black hover:bg-gray-900" href="/"
+						>Buchen</a
 					>
 				</div>
 			</div>
 		</div>
 	</nav>
 
-	<div class:hidden={!displayMobileNav} class="navbar-menu fixed top-0 left-0 bottom-0 w-3/4 max-w-xs z-50" data-config-="">
-		<div class="navbar-backdrop fixed inset-0 bg-black bg-opacity-75" />
-		<nav class="relative flex flex-col h-full p-8 bg-white">
-			<div class="flex items-center justify-between mb-12">
-				<a class="items-center" href="#">
-					<img src="pstls-assets/logos/pstls-logo-md.svg" alt="" width="102" />
-				</a>
-				<button
-					class="inline-block navbar-close focus:outline-none"
-					type="button"
-					aria-label="Close"
-				>
-					<img src="pstls-assets/images/navigations/x2.svg" alt="" />
-				</button>
-			</div>
-			<div>
-				<ul>
-					<li class="py-3">
-						<a class="inline-block font-bold hover:text-gray-900" href="#">Home</a>
-					</li>
-					<li class="py-3">
-						<a class="inline-block font-bold hover:text-gray-900" href="#">Products</a>
-					</li>
-					<li class="py-3">
-						<a class="inline-block font-bold hover:text-gray-900" href="#">Resources</a>
-					</li>
-					<li class="py-3">
-						<a class="inline-block font-bold hover:text-gray-900" href="#">Pricing</a>
-					</li>
-				</ul>
-			</div>
-			<div class="mt-auto">
-				<div>
-					<a class="block py-3 text-center font-bold" href="#">Log In</a><a
-						class="block px-8 py-3 text-center text-white font-bold bg-black hover:bg-gray-900"
-						href="#">Sign Up</a
+	{#if displayMobileNav}
+		<div class="navbar-menu fixed top-0 left-0 bottom-0 w-3/4 max-w-xs z-50" data-config-="">
+			<div class="navbar-backdrop fixed inset-0 bg-black bg-opacity-75" />
+			<nav class="relative flex flex-col h-full p-8 bg-white">
+				<div class="flex items-center justify-between mb-12">
+					<a class="items-center" href="/">
+						<img src="pstls-assets/logos/pstls-logo-md.svg" alt="" width="102" />
+					</a>
+					<button on:click={handleMobileNav}
+						class="inline-block navbar-close focus:outline-none"
+						type="button"
+						aria-label="Close"
 					>
+						CLOSE
+					</button>
 				</div>
-			</div>
-		</nav>
-	</div>
+				<div>
+					<ul>
+                        <li on:click={handleMobileNav} class="py-3"><a class="inline-block font-bold hover:text-gray-900" aria-current="page" href="/">Home</a></li>
+						<li on:click={handleMobileNav} class="py-3"><a class="inline-block font-bold hover:text-gray-900" href="/about">Über mich</a></li>
+						<li on:click={handleMobileNav} class="py-3"><a class="inline-block font-bold hover:text-gray-900" href="/yoga">Yoga</a></li>
+						<li on:click={handleMobileNav} class="py-3"><a class="inline-block font-bold hover:text-gray-900" href="/meditation">Meditation</a></li>
+                        <li on:click={handleMobileNav} class="py-3"><a class="inline-block font-bold hover:text-gray-900" href="/healing-arts">Healing Arts</a></li>
+                        <li on:click={handleMobileNav} class="py-3"><a class="inline-block font-bold hover:text-gray-900" href="/retreats-events">Reatreats & Events</a></li>
+                        <li on:click={handleMobileNav} class="py-3"><a class="inline-block font-bold hover:text-gray-900" href="/contact">Kontakt</a></li>
+					</ul>
+				</div>
+				<div class="mt-auto">
+					<div>
+						<a class="block py-3 text-center font-bold" href="/">Log In</a>
+					</div>
+				</div>
+			</nav>
+		</div>
+	{/if}
 </section>

@@ -2,14 +2,13 @@ const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
 	theme: {
-		extend: {},
-		colors: {
-			transparent: 'transparent',
-			current: 'currentColor',
-			purple: '#591647',
-			rose: '#d8a588',
-			amber: '#a54521',
-			yellow: '#fecb13',
+		extend: {
+			colors: {
+				beyondpurple: '#591647',
+				beyondrose: '#d8a588',
+				beyondamber: '#a54521',
+				beyondyellow: '#fecb13',
+			}
 		}
 	},
 
