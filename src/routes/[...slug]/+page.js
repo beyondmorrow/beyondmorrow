@@ -4,8 +4,6 @@ import Grid from '../../components/Grid.svelte';
 import Page from '../../components/Page.svelte';
 import Teaser from '../../components/Teaser.svelte';
 
-export const prerender = true;
-
 storyblokInit({
   accessToken: "gFB8E36ZBQndTil6oKKGTQtt",
   use: [apiPlugin],
