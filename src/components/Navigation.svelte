@@ -1,6 +1,7 @@
 <script>
 	import { fade, scale } from 'svelte/transition';
 	import { page } from '$app/stores';
+	import Button from './Button.svelte';
 
 	let displayMobileNav = false;
 	function handleMobileNav() {
@@ -57,9 +58,7 @@
 					</ul>
 				</div>
 				<div class="hidden lg:block">
-					<a class="inline-block px-8 py-3 text-lg font-bold text-white bg-beyondamber hover:bg-gray-900" href="/"
-						>Buchen</a
-					>
+					<Button />
 				</div>
 			</div>
 		</div>

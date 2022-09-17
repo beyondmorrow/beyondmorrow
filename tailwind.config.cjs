@@ -4,7 +4,10 @@ const config = {
 	theme: {
 		extend: {
 			colors: {
-				beyondpurple: '#591647',
+				beyondpurple: {
+					800: '#6e1c58',
+					900: '#591647',
+				},
 				beyondrose: {
 					100: '#f9f1ec',
 					900: '#d8a588'

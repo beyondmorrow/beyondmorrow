@@ -5,6 +5,7 @@ import Page from '../../components/Page.svelte';
 import Image from '../../components/Image.svelte';
 import Quote from '../../components/Quote.svelte';
 import Offers from '../../components/Offers.svelte';
+import DetailedOffers from '../../components/DetailedOffers.svelte';
 
 storyblokInit({
   accessToken: "gFB8E36ZBQndTil6oKKGTQtt",
@@ -15,6 +16,7 @@ storyblokInit({
     image: Image,
     quote: Quote,
     offers: Offers,
+    detailedOffers: DetailedOffers,
   },
 });
 
