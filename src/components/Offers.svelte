@@ -1,19 +1,16 @@
 <script>
 	import { storyblokEditable } from '@storyblok/svelte';
+	import Heading from './Heading.svelte';
 
 	export let blok;
+
+	blok.size = 'h1';
 </script>
 
 <div use:storyblokEditable={blok}>
-	<section class="py-24 bg-beyondrose-100">
+	<section class="bg-beyondrose-100">
 		<div class="container px-4 mx-auto">
-			<div class="max-w-xl mx-auto mb-16 text-center">
-				<h1 class="font-spectral text-5xl text-beyondpurple">{blok.heading}</h1>
-				<p>
-					{blok.subheading}
-				</p>
-			</div>
-
+			<Heading {blok} />
 			<div class="flex flex-wrap -mx-4 -mb-8 pl-5 pr-5">
 				{#each blok.offers as offer}
 					<div class="w-full lg:w-1/2 px-4 mb-8">
