@@ -1,0 +1,1 @@
+<h2 class="text-4xl font-heading mb-6">Lorem ipsum</h2>

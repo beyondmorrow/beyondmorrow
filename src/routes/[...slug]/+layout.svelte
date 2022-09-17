@@ -5,5 +5,5 @@
 
 <main>
 	<Navigation/>
-	<slot />
+	<slot/>
 </main>
