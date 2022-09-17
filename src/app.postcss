@@ -2,3 +2,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    html {
+    font-family: Muli, Spectral, Northwell;
+    }
+    @font-face {
+        font-family: 'Northwell';
+        src: url('/fonts/Northwell Alt.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Muli';
+        font-weight: 200;
+        font-style: normal;
+        src: url('/fonts/Muli-ExtraLight.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Spectral';
+        font-weight: 200;
+        font-style: normal;
+        src: url('/fonts/Spectral-ExtraLight.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Spectral';
+        font-weight: 200;
+        font-style: italic;
+        src: url('/fonts/Spectral-ExtraLightItalic.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Spectral';
+        font-weight: 600;
+        font-style: italic;
+        src: url('/fonts/Spectral-SemiBoldItalic.woff') format('woff');
+    }
+}

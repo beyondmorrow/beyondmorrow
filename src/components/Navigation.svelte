@@ -1,5 +1,6 @@
 <script>
 	import { fade, scale } from 'svelte/transition';
+	import { page } from '$app/stores';
 
 	let displayMobileNav = false;
 	function handleMobileNav() {
@@ -48,7 +49,7 @@
 					<ul class="inline-flex">
 						{#each navEntries as entry}
 							<li class="mr-8">
-								<a class="inline-block font-bold hover:text-gray-900" href={entry.link}
+								<a class:text-beyondgrey={$page.url.pathname === entry.link} class="inline-block hover:text-gray-900 text-lg" href={entry.link}
 									>{entry.name}</a
 								>
 							</li>
@@ -56,7 +57,7 @@
 					</ul>
 				</div>
 				<div class="hidden lg:block">
-					<a class="inline-block px-8 py-3 text-white font-bold bg-black hover:bg-gray-900" href="/"
+					<a class="inline-block px-8 py-3 text-lg font-bold text-white bg-beyondamber hover:bg-gray-900" href="/"
 						>Buchen</a
 					>
 				</div>
@@ -85,7 +86,7 @@
 						<ul>
 							{#each navEntries as entry}
 								<li on:click={handleMobileNav} class="py-3">
-									<a class="inline-block font-bold hover:text-gray-900" href={entry.link}
+									<a class:text-beyondgrey={$page.url.pathname === entry.link} class="inline-block hover:text-gray-900" href={entry.link}
 										>{entry.name}</a
 									>
 								</li>
