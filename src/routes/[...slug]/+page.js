@@ -3,10 +3,7 @@ import { storyblokInit, apiPlugin, useStoryblokApi } from "@storyblok/svelte";
 import Heading from '../../components/Heading.svelte';
 import Page from '../../components/Page.svelte';
 import Image from '../../components/Image.svelte';
-import Section from '../../components/Section.svelte';
-import Paragraph from '../../components/Paragraph.svelte';
 import Quote from '../../components/Quote.svelte';
-import SubHeading from '../../components/SubHeading.svelte';
 import Offers from '../../components/Offers.svelte';
 
 storyblokInit({
@@ -16,10 +13,7 @@ storyblokInit({
     heading: Heading,
     page: Page,
     image: Image,
-    section: Section,
-    paragraph: Paragraph,
     quote: Quote,
-    subHeading: SubHeading,
     offers: Offers,
   },
 });
