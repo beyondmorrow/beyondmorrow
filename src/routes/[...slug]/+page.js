@@ -1,4 +1,5 @@
 import { storyblokInit, apiPlugin, useStoryblokApi } from "@storyblok/svelte";
+ import { PUBLIC_STORYBLOK_TOKEN } from '$env/static/public';
 
 import Heading from '../../components/Heading.svelte';
 import Page from '../../components/Page.svelte';
@@ -8,8 +9,11 @@ import Offers from '../../components/Offers.svelte';
 import DetailedOffers from '../../components/DetailedOffers.svelte';
 import Faq from '../../components/Faq.svelte';
 
+/**
+ * Init Storyblok
+ */
 storyblokInit({
-  accessToken: "gFB8E36ZBQndTil6oKKGTQtt",
+  accessToken: PUBLIC_STORYBLOK_TOKEN,
   use: [apiPlugin],
   components: {
     heading: Heading,
@@ -35,7 +39,7 @@ export async function load({ params }) {
   }
 
   const { data } = await storyblokApi.get(path, {
-    version: "draft",
+    version: "published",
   });
  
   return {
