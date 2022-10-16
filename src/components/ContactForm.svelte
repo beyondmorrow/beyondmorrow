@@ -58,7 +58,7 @@
 							<p>{blok.successMessage}</p>
 						</div>
 					{:else}
-						<form name="contact" method="POST" data-netlify="true" action="/contact?successful">
+						<form name="contact" method="POST" netlify action="/contact?successful">
 							<input
 								required
 								name="name"
