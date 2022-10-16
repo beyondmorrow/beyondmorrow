@@ -1,12 +1,29 @@
 <script>
 	import { renderRichText } from '@storyblok/svelte';
 	import { page } from '$app/stores';
-
 	export let blok;
 
+  // Render storyblok rich text to html
 	const answerHTML = renderRichText(blok.answer);
 
+  // lets us check wheter the form was already sent in order to display a message and hide the form
 	const successfulContactForm = $page.url.searchParams.has('successful');
+
+
+  // Submit form
+  let name = '';
+  let surname = '';
+  let email = '';
+  let message = '';
+
+  export async function submitForm() {
+    const submit = await fetch('/.netlify/functions/contactForm', {
+      method: 'POST',
+      body: JSON.stringify({ name, surname, email, message }),
+    })
+
+    const data = await submit.json();
+  }
 </script>
 
 <section class="relative mb-16">
@@ -57,8 +74,9 @@
 							<p>{blok.successMessage}</p>
 						</div>
 					{:else}
-						<form name="contact" method="POST" action="/contact?successful">
+						<form name="contact" method="POST" on:submit={submitForm} action="/contact?successful">
 							<input
+                bind:value={name}
 								required
 								name="name"
 								class="block w-full py-2 px-4 mb-6 text-lg border-b border-gray-400 placeholder-beyondgrey outline-none"
@@ -66,6 +84,7 @@
 								placeholder="Vorname"
 							/>
 							<input
+                bind:value={surname}
 								required
 								name="surname"
 								class="block w-full py-2 px-4 mb-6 text-lg border-b border-gray-400 placeholder-beyondgrey outline-none"
@@ -73,6 +92,7 @@
 								placeholder="Nachname"
 							/>
 							<input
+                bind:value={email}
 								required
 								name="email"
 								class="block w-full py-2 px-4 mb-6 text-lg border-b border-gray-400 placeholder-beyondgrey outline-none"
@@ -80,6 +100,7 @@
 								placeholder="E-Mail-Adresse"
 							/>
 							<textarea
+                bind:value={message}
 								required
 								name="message"
 								class="block w-full py-2 px-4 mb-6 text-lg border-b border-gray-400 placeholder-beyondgrey outline-none resize-none"
