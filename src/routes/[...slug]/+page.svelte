@@ -7,6 +7,8 @@
 	onMount(() => {
 		useStoryblokBridge(data.story.id, (newStory) => (data.story = newStory));
 	});
+
+	export const prerender = true;
 </script>
 
 <div>
