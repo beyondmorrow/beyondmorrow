@@ -1,11 +1,7 @@
 <script>
 	import { renderRichText } from '@storyblok/svelte';
-	import { page } from '$app/stores';
   import { applyAction } from '$app/forms';
   import { invalidateAll, goto } from '$app/navigation';
-
-  export let form;
-  let error;
 
 	export let blok;
 
@@ -13,7 +9,7 @@
 	const answerHTML = renderRichText(blok.answer);
 
   // Display error or success message after form submit
-  const displaySuccessMessage = false;
+  $: displaySuccessMessage = false;
   const displayErrorMessage = false;                        
 
   // Handle form
@@ -22,18 +18,14 @@
 
     const response = await fetch(this.action, {
       method: 'POST',
-      body: JSON.stringify({ 
-                             name: formData.get('name').toString(),
-                             surname: formData.get('surname').toString(),
-                             email: formData.get('email').toString(),
-                             message: formData.get('message').toString()
-                          }),
+      body: JSON.stringify(formData),
     })
 
     const result = await response.json();
 
     if (result.type === 'success') {
       await invalidateAll();
+      displaySuccessMessage = true;
     }
 
     applyAction(result);
