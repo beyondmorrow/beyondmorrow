@@ -18,7 +18,7 @@
 
     const response = await fetch(this.action, {
       method: 'POST',
-      body: JSON.stringify(formData),
+      body: JSON.stringify(formData.entries()),
     })
 
     const result = await response.json();
