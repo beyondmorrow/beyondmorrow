@@ -12,7 +12,7 @@
 <section class="relative mb-16">
 	<div class="container px-4 mx-auto">
 		<div class="flex flex-wrap -mx-4">
-			<div class="w-full lg:w-1/2 px-4 lg:pl-24 relative">
+			<div class="w-full lg:w-1/2 px-4 lg:pl-24 relative mb-20">
 				<div class="py-2 max-w-md xl:max-w-lg mx-auto relative">
 					<p class="text-beyondpurple-900 font-spectral font-semibold italic">{blok.question}</p>
 					{@html answerHTML}
