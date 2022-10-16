@@ -54,7 +54,7 @@
 				<div class="max-w-md mx-auto py-2">
 					{#if successfulContactForm}
 						<div class="p-14 text-center">
-              <image class="m-auto mb-5" src="/icons/heart.svg" />
+              <image class="m-auto mb-5" src="/icons/heart.svg" alt=""/>
 							<p>{blok.successMessage}</p>
 						</div>
 					{:else}
