@@ -20,7 +20,7 @@ exports.handler = async (event, context) => {
         await client.send(data);
         return {
             statusCode: 200,
-            body: 'Message sent',
+            body: JSON.stringify({ msg: "Message sent"}),
         };
     } catch (err) {
         return {
