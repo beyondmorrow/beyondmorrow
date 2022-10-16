@@ -1,7 +1,6 @@
 <script>
-	import { storyblokEditable, renderRichText } from '@storyblok/svelte';
+	import { renderRichText } from '@storyblok/svelte';
 	import { page } from '$app/stores';
-	import Button from './Button.svelte';
 
 	export let blok;
 
@@ -58,7 +57,7 @@
 							<p>{blok.successMessage}</p>
 						</div>
 					{:else}
-						<form name="contact" method="POST" netlify>
+						<form name="contact" method="POST" action="/contact?successful">
 							<input
 								required
 								name="name"
