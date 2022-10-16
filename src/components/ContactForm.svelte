@@ -23,6 +23,7 @@
     })
 
     const data = await submit.json();
+    console.log("DEBUG: "+data)
   }
 </script>
 
