@@ -4,6 +4,7 @@
 	import Button from './Button.svelte';
 
 	export let blok;
+  export const prerender = true;
 
 	const answerHTML = renderRichText(blok.answer);
 
