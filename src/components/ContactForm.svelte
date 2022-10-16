@@ -1,7 +1,7 @@
 <script>
 	import { renderRichText } from '@storyblok/svelte';
   import { applyAction } from '$app/forms';
-  import { invalidateAll, goto } from '$app/navigation';
+  import { invalidateAll } from '$app/navigation';
 
 	export let blok;
 
@@ -18,14 +18,19 @@
 
     const response = await fetch(this.action, {
       method: 'POST',
-      body: JSON.stringify(formData.entries()),
+      body: JSON.stringify({ 
+                             name: formData.get('name').toString(),
+                             surname: formData.get('surname').toString(),
+                             email: formData.get('email').toString(),
+                             message: formData.get('message').toString()
+                          }),
     })
 
     const result = await response.json();
 
     if (result.type === 'success') {
-      await invalidateAll();
       displaySuccessMessage = true;
+      await invalidateAll();
     }
 
     applyAction(result);
