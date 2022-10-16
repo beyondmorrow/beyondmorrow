@@ -1,4 +1,6 @@
 <script>
+	import Newsletter from "./Newsletter.svelte";
+
 	const footerHeadingLeft = 'Hilfe';
 	const footerMenuLeft = [
 		{
@@ -85,20 +87,7 @@
 						{/each}
 					</ul>
 				</div>
-				<div class="w-full md:w-1/2 lg:w-1/4 px-4">
-					<h5 class="text-xl font-bold mb-5 text-white">Newsletter</h5>
-					<div class="flex items-center pl-3 pr-2 py-2 bg-white">
-						<input
-							class="xl:w-4/6 px-2 inline-block bg-transparent text-base outline-none"
-							type="email"
-							placeholder="Email Address"
-						/>
-						<button
-							class="ml-auto inline-block px-3 py-2 bg-black hover:bg-gray-900 text-white font-bold transition duration-200"
-							>Send</button
-						>
-					</div>
-				</div>
+				<Newsletter/>
 			</div>
 		</div>
 	</div>
