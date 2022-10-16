@@ -2,10 +2,10 @@ import { client } from '@sendgrid/mail';
 const {
     SENDGRID_API_KEY,
     SENDGRID_TO_EMAIL,
-    SENDGRID_FROM_EMAIL,
+    SENDGRID_FROM_EMAIL
 } = process.env;
 
-exports.handler = async function (event, context, callback) {
+exports.handler = async (event, context) => {
     const { name, surname, email, message } = JSON.parse(event.body);
     client.setApiKey(SENDGRID_API_KEY);
 
@@ -24,7 +24,7 @@ exports.handler = async function (event, context, callback) {
         };
     } catch (err) {
         return {
-            statusCode: err.code,
+            statusCode: 404,
             body: JSON.stringify({ msg: err.message }),
         };
     }
