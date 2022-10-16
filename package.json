@@ -29,6 +29,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@mailchimp/mailchimp_marketing": "^3.0.78",
+		"@sendgrid/mail": "^7.7.0",
 		"@storyblok/svelte": "^2.3.0",
 		"crypto": "^1.0.1"
 	}
