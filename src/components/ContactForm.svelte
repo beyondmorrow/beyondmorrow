@@ -23,10 +23,10 @@
     const response = await fetch(this.action, {
       method: 'POST',
       body: JSON.stringify({ 
-                             name: stringify(formData.get('name')),
-                             surname: stringify(formData.get('surname')),
-                             email: stringify(formData.get('email')),
-                             message: stringify(formData.get('message'))
+                             name: formData.get('name').toString(),
+                             surname: formData.get('surname').toString(),
+                             email: formData.get('email').toString(),
+                             message: formData.get('message').toString()
                           }),
     })
 
