@@ -29,7 +29,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@mailchimp/mailchimp_marketing": "^3.0.78",
 		"@storyblok/svelte": "^2.3.0",
 		"crypto": "^1.0.1"
 	}
