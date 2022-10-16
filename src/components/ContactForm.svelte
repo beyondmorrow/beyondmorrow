@@ -1,29 +1,37 @@
 <script>
 	import { renderRichText } from '@storyblok/svelte';
 	import { page } from '$app/stores';
+  import { applyAction } from '$app/forms';
+  import { invalidateAll, goto } from '$app/navigation';
+
+  export let form;
+  let error;
+
 	export let blok;
 
   // Render storyblok rich text to html
 	const answerHTML = renderRichText(blok.answer);
 
-  // lets us check wheter the form was already sent in order to display a message and hide the form
-	const successfulContactForm = $page.url.searchParams.has('successful');
+  // Display error or success message after form submit
+  const displaySuccessMessage = false;
+  const displayErrorMessage = false;                        
 
+  // Handle form
+  export async function handleSubmit(event) {
+    const data = new FormData(this);
 
-  // Submit form
-  let name = '';
-  let surname = '';
-  let email = '';
-  let message = '';
-
-  export async function submitForm() {
-    const submit = await fetch('/.netlify/functions/contactForm', {
+    const response = await fetch(this.action, {
       method: 'POST',
-      body: JSON.stringify({ name, surname, email, message }),
+      body: data,
     })
 
-    const data = await submit.json();
-    console.log("DEBUG: "+data)
+    const result = await response.json();
+
+    if (result.type === 'success') {
+      await invalidateAll();
+    }
+
+    applyAction(result);
   }
 </script>
 
@@ -69,15 +77,14 @@
 			</div>
 			<div class="w-full lg:w-1/2 px-4">
 				<div class="max-w-md mx-auto py-2">
-					{#if successfulContactForm}
+					{#if displaySuccessMessage}
 						<div class="p-14 text-center">
               <img class="m-auto mb-5" src="/icons/heart.svg" alt="heart"/>
 							<p>{blok.successMessage}</p>
 						</div>
 					{:else}
-						<form name="contact" method="POST" on:submit|preventDefault={submitForm} action="/contact?successful">
+						<form name="contact" method="POST" on:submit|preventDefault={handleSubmit} action="/.netlify/functions/contactForm">
 							<input
-                bind:value={name}
 								required
 								name="name"
 								class="block w-full py-2 px-4 mb-6 text-lg border-b border-gray-400 placeholder-beyondgrey outline-none"
@@ -85,7 +92,6 @@
 								placeholder="Vorname"
 							/>
 							<input
-                bind:value={surname}
 								required
 								name="surname"
 								class="block w-full py-2 px-4 mb-6 text-lg border-b border-gray-400 placeholder-beyondgrey outline-none"
@@ -93,7 +99,6 @@
 								placeholder="Nachname"
 							/>
 							<input
-                bind:value={email}
 								required
 								name="email"
 								class="block w-full py-2 px-4 mb-6 text-lg border-b border-gray-400 placeholder-beyondgrey outline-none"
@@ -101,7 +106,6 @@
 								placeholder="E-Mail-Adresse"
 							/>
 							<textarea
-                bind:value={message}
 								required
 								name="message"
 								class="block w-full py-2 px-4 mb-6 text-lg border-b border-gray-400 placeholder-beyondgrey outline-none resize-none"
