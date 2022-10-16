@@ -18,11 +18,16 @@
 
   // Handle form
   export async function handleSubmit(event) {
-    const data = new FormData(this);
+    const formData = new FormData(this);
 
     const response = await fetch(this.action, {
       method: 'POST',
-      body: data,
+      body: JSON.stringify({ 
+                             name: stringify(formData.get('name')),
+                             surname: stringify(formData.get('surname')),
+                             email: stringify(formData.get('email')),
+                             message: stringify(formData.get('message'))
+                          }),
     })
 
     const result = await response.json();
