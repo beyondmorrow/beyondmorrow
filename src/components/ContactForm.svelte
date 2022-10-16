@@ -75,7 +75,7 @@
 							<p>{blok.successMessage}</p>
 						</div>
 					{:else}
-						<form name="contact" method="POST" on:submit={submitForm} action="/contact?successful">
+						<form name="contact" method="POST" on:submit|preventDefault={submitForm} action="/contact?successful">
 							<input
                 bind:value={name}
 								required
