@@ -1,4 +1,4 @@
-import { client } from '@sendgrid/mail';
+const client = require('@sendgrid/mail');
 const {
     SENDGRID_API_KEY,
     SENDGRID_TO_EMAIL,
@@ -24,7 +24,7 @@ exports.handler = async (event, context) => {
         };
     } catch (err) {
         return {
-            statusCode: 404,
+            statusCode: 400,
             body: JSON.stringify({ msg: err.message }),
         };
     }
