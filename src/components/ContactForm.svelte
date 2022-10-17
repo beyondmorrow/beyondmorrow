@@ -3,6 +3,12 @@
 	import { applyAction, enhance } from '$app/forms';
 	import { invalidateAll } from '$app/navigation';
 
+	/** @type {import('./$types').ActionData} */
+	export let form;
+
+	/** @type {any} */
+	let error;
+
 	export let blok;
 
 	// Render storyblok rich text to html
@@ -13,10 +19,10 @@
 	let displayErrorMessage = false;
 
 	// Handle form
-	export async function handleSubmit() {
+	export async function handleSubmit(event) {
 		const formData = new FormData(this);
 
-		const response = await fetch("/.netlify/functions/contactForm", {
+		const response = await fetch('/.netlify/functions/contactForm', {
 			method: 'POST',
 			body: JSON.stringify({
 				name: formData.get('name').toString(),
@@ -26,9 +32,12 @@
 			})
 		});
 
-		console.log(JSON.stringify(response))
+		/** @type {import('@sveltejs/kit').ActionResult} */
+		const result = await response.json();
 
-		if (response.statusCode === 200) {
+		console.log(result);
+
+		if (result.type === 'success') {
 			displaySuccessMessage = true;
 			console.log(displaySuccessMessage);
 		}
@@ -85,12 +94,7 @@
 							<p>{blok.successMessage}</p>
 						</div>
 					{:else}
-						<form
-							name="contact"
-							method="POST"
-							on:submit|preventDefault={handleSubmit}
-							use:enhance
-						>
+						<form name="contact" method="POST" on:submit|preventDefault={handleSubmit}>
 							<input
 								required
 								name="name"
