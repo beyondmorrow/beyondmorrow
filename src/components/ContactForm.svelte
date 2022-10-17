@@ -26,9 +26,9 @@
 			})
 		});
 
-		console.log(response.toString());
+		console.log(response.status);
 
-		if (result.type === 'success') {
+		if (response.status === 200) {
 			displaySuccessMessage = true;
 			console.log(displaySuccessMessage);
 		}
