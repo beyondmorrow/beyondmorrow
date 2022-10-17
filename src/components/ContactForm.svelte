@@ -1,7 +1,5 @@
 <script>
 	import { renderRichText } from '@storyblok/svelte';
-	import { applyAction, enhance } from '$app/forms';
-	import { invalidateAll } from '$app/navigation';
 
 	export let blok;
 
@@ -26,14 +24,11 @@
 			})
 		});
 
-		console.log(response.status);
-
 		if (response.status === 200) {
 			displaySuccessMessage = true;
-			console.log(displaySuccessMessage);
+		} else {
+			displayErrorMessage = true;
 		}
-
-		//applyAction(result);
 	}
 </script>
 
@@ -83,6 +78,10 @@
 						<div class="p-14 text-center">
 							<img class="m-auto mb-5" src="/icons/heart.svg" alt="heart" />
 							<p>{blok.successMessage}</p>
+						</div>
+					{:else if displayErrorMessage}
+						<div class="p-14 text-center">
+							<p class="text-red-500">{blok.errorMessage}</p>
 						</div>
 					{:else}
 						<form name="contact" method="POST" on:submit|preventDefault={handleSubmit}>
