@@ -1,5 +1,6 @@
 <script>
 	import { storyblokEditable } from '@storyblok/svelte';
+	import { renderRichText } from '@storyblok/svelte';
 	import Button from './Button.svelte';
 	import Heading from './Heading.svelte';
 
@@ -47,7 +48,7 @@
 								</h5>
 								{#if isAnswerExpanded(question._uid)}
 									<p class="leading-8 text-gray-800 text-lg pb-5">
-										{question.answer}
+										{@html renderRichText(question.answer)}
 									</p>
 								{/if}
 							</div>
