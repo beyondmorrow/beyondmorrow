@@ -6,18 +6,18 @@ const {
 } = process.env;
 
 exports.handler = async (event, context) => {
-    const payload = JSON.parse(event.body).payload;
+    const { name, surname, email, message } = JSON.parse(event.body);
     client.setApiKey(SENDGRID_API_KEY);
 
     const data = {
         to: SENDGRID_TO_EMAIL,
         from: SENDGRID_FROM_EMAIL,
-        subject: `Neue Kontaktanfrage von ${payload.data.name} ${payload.data.surname} (${payload.data.email})`,
-        html: payload.data.message,
+        subject: `Neue Kontaktanfrage von ${name} ${surname} (${email})`,
+        html: message,
     };
 
     try {
-        await client.send(data);    
+        await client.send(data);
         return {
             statusCode: 200,
             body: JSON.stringify({ msg: "Message sent"}),

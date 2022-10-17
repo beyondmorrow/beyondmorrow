@@ -3,12 +3,6 @@
 	import { applyAction, enhance } from '$app/forms';
 	import { invalidateAll } from '$app/navigation';
 
-	/** @type {import('./$types').ActionData} */
-	export let form;
-
-	/** @type {any} */
-	let error;
-
 	export let blok;
 
 	// Render storyblok rich text to html
@@ -18,32 +12,29 @@
 	let displaySuccessMessage = false;
 	let displayErrorMessage = false;
 
-	// // Handle form
-	// export async function handleSubmit(event) {
-	// 	const formData = new FormData(this);
+	// Handle form
+	export async function handleSubmit(event) {
+		const formData = new FormData(this);
 
-	// 	const response = await fetch('/.netlify/functions/contactForm', {
-	// 		method: 'POST',
-	// 		body: JSON.stringify({
-	// 			name: formData.get('name').toString(),
-	// 			surname: formData.get('surname').toString(),
-	// 			email: formData.get('email').toString(),
-	// 			message: formData.get('message').toString()
-	// 		})
-	// 	});
+		const response = await fetch('/.netlify/functions/contactForm', {
+			method: 'POST',
+			body: JSON.stringify({
+				name: formData.get('name').toString(),
+				surname: formData.get('surname').toString(),
+				email: formData.get('email').toString(),
+				message: formData.get('message').toString()
+			})
+		});
 
-	// 	/** @type {import('@sveltejs/kit').ActionResult} */
-	// 	const result = await response.json();
+		console.log(response.toString());
 
-	// 	console.log(result);
+		if (result.type === 'success') {
+			displaySuccessMessage = true;
+			console.log(displaySuccessMessage);
+		}
 
-	// 	if (result.type === 'success') {
-	// 		displaySuccessMessage = true;
-	// 		console.log(displaySuccessMessage);
-	// 	}
-
-	// 	applyAction(result);
-	// }
+		//applyAction(result);
+	}
 </script>
 
 <section class="relative mb-16">
@@ -94,7 +85,7 @@
 							<p>{blok.successMessage}</p>
 						</div>
 					{:else}
-						<form name="contact" method="POST" use:enhance action="/.netlify/functions/contactForm">
+						<form name="contact" method="POST" on:submit|preventDefault={handleSubmit}>
 							<input
 								required
 								name="name"
