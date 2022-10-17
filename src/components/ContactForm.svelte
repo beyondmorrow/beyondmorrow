@@ -13,7 +13,7 @@
 	let displayErrorMessage = false;
 
 	// Handle form
-	export async function handleSubmit(event) {
+	export async function handleSubmit() {
 		const formData = new FormData(this);
 
 		const response = await fetch(this.action, {
@@ -27,6 +27,8 @@
 		});
 
 		const result = await response.json();
+
+		console.log(JSON.stringify(result))
 
 		if (result.type === 'success') {
 			displaySuccessMessage = true;
