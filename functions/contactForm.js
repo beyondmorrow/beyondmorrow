@@ -7,7 +7,7 @@ const {
 
 exports.handler = async (event, context) => {
     try {
-        const { namex, surname, email, message } = JSON.parse(event.body);
+        const { name, surname, email, message } = JSON.parse(event.body);
         client.setApiKey(SENDGRID_API_KEY);
 
         const data = {
