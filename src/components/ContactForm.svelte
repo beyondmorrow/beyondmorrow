@@ -26,11 +26,9 @@
 			})
 		});
 
-		const result = await response.json();
+		console.log(JSON.stringify(response))
 
-		console.log(JSON.stringify(result))
-
-		if (result.type === 'success') {
+		if (response.statusCode === 200) {
 			displaySuccessMessage = true;
 			console.log(displaySuccessMessage);
 		}
