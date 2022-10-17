@@ -16,7 +16,7 @@
 	export async function handleSubmit() {
 		const formData = new FormData(this);
 
-		const response = await fetch(this.action, {
+		const response = await fetch("/.netlify/functions/contactForm", {
 			method: 'POST',
 			body: JSON.stringify({
 				name: formData.get('name').toString(),
@@ -91,7 +91,6 @@
 							name="contact"
 							method="POST"
 							on:submit|preventDefault={handleSubmit}
-							action="/.netlify/functions/contactForm"
 							use:enhance
 						>
 							<input
