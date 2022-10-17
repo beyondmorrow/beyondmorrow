@@ -1,40 +1,40 @@
 <script>
 	import { renderRichText } from '@storyblok/svelte';
-  import { applyAction } from '$app/forms';
-  import { invalidateAll } from '$app/navigation';
+	import { applyAction, enhance } from '$app/forms';
+	import { invalidateAll } from '$app/navigation';
 
 	export let blok;
 
-  // Render storyblok rich text to html
+	// Render storyblok rich text to html
 	const answerHTML = renderRichText(blok.answer);
 
-  // Display error or success message after form submit
-  $: displaySuccessMessage = false;
-  const displayErrorMessage = false;                        
+	// Display error or success message after form submit
+	let displaySuccessMessage = false;
+	let displayErrorMessage = false;
 
-  // Handle form
-  export async function handleSubmit(event) {
-    const formData = new FormData(this);
+	// Handle form
+	export async function handleSubmit(event) {
+		const formData = new FormData(this);
 
-    const response = await fetch(this.action, {
-      method: 'POST',
-      body: JSON.stringify({ 
-                             name: formData.get('name').toString(),
-                             surname: formData.get('surname').toString(),
-                             email: formData.get('email').toString(),
-                             message: formData.get('message').toString()
-                          }),
-    })
+		const response = await fetch(this.action, {
+			method: 'POST',
+			body: JSON.stringify({
+				name: formData.get('name').toString(),
+				surname: formData.get('surname').toString(),
+				email: formData.get('email').toString(),
+				message: formData.get('message').toString()
+			})
+		});
 
-    const result = await response.json();
+		const result = await response.json();
 
-    if (result.type === 'success') {
-      displaySuccessMessage = true;
-      await invalidateAll();
-    }
+		if (result.type === 'success') {
+			displaySuccessMessage = true;
+			console.log(displaySuccessMessage);
+		}
 
-    applyAction(result);
-  }
+		applyAction(result);
+	}
 </script>
 
 <section class="relative mb-16">
@@ -81,11 +81,17 @@
 				<div class="max-w-md mx-auto py-2">
 					{#if displaySuccessMessage}
 						<div class="p-14 text-center">
-              <img class="m-auto mb-5" src="/icons/heart.svg" alt="heart"/>
+							<img class="m-auto mb-5" src="/icons/heart.svg" alt="heart" />
 							<p>{blok.successMessage}</p>
 						</div>
 					{:else}
-						<form name="contact" method="POST" on:submit|preventDefault={handleSubmit} action="/.netlify/functions/contactForm">
+						<form
+							name="contact"
+							method="POST"
+							on:submit|preventDefault={handleSubmit}
+							action="/.netlify/functions/contactForm"
+							use:enhance
+						>
 							<input
 								required
 								name="name"
@@ -115,7 +121,7 @@
 								rows="10"
 								placeholder="Deine Nachricht"
 							/>
-              <input type="hidden" name="contact" value="contact">
+							<input type="hidden" name="contact" value="contact" />
 							<button
 								type="submit"
 								class="rounded-sm drop-shadow-md inline-block w-full md:w-auto py-3 px-8 text-center text-white font-bold bg-beyondpurple-900 hover:bg-beyondpurple-800 transition duration-200"
