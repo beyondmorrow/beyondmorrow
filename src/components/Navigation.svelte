@@ -18,12 +18,8 @@
 			link: '/yoga'
 		},
 		{
-			name: 'Meditation',
-			link: '/meditation'
-		},
-		{
-			name: 'Healing Arts',
-			link: '/healing-arts'
+			name: 'Meditation & Klang',
+			link: '/meditation-klang'
 		},
 		{
 			name: 'Retreats & Events',

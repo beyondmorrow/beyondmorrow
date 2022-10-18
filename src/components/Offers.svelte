@@ -1,5 +1,6 @@
 <script>
 	import { storyblokEditable } from '@storyblok/svelte';
+	import { page } from '$app/stores';
 	import Heading from './Heading.svelte';
 
 	export let blok;
@@ -7,14 +8,22 @@
 	// Size for Heading component
 	blok.size = 'h1';
 
-	function generateTextForAlternatives(alternative) {
-		switch (alternative) {
-			case 'yoga':
-				return 'Yoga';
-			case 'meditation':
-				return 'Meditation';
-			case 'healing-arts':
-				return 'Healing Arts';
+	function alternative() {
+		switch ($page.url.pathname) {
+			case '/yoga':
+				return {
+					text: "Auf der Suche nach Ruhe? Probier's mal mit ",
+					linkText: 'Meditation',
+					href: '/meditation-klang'
+				};
+			case '/meditation-klang':
+				return {
+					text: "Auf der Suche nach etwas bewegterem? Probier's mal mit ",
+					linkText: 'Yoga',
+					href: '/yoga'
+				};
+			default:
+				return null;
 		}
 	}
 </script>
@@ -47,12 +56,11 @@
 		</div>
 	</section>
 
-	<section class="container mx-auto text-center mt-16">
-		<p class="font-spectral italic text-3xl">
-			Lust auf etwas anderes? Entdecke <a class="font-bold" href="/{blok.alternatives[0]}">
-				{generateTextForAlternatives(blok.alternatives[0])}</a>
-			und
-			<a class="font-bold" href={blok.alternatives[1]}>{generateTextForAlternatives(blok.alternatives[1])}</a>.
-		</p>
-	</section>
+	{#if alternative() !== null}
+		<section class="container mx-auto text-center mt-16">
+			<p class="font-spectral italic text-3xl">
+				{alternative().text}<a href={alternative().href}><b>{alternative().linkText}</b></a>.
+			</p>
+		</section>
+	{/if}
 </div>
