@@ -9,6 +9,7 @@ import Offers from '../../components/Offers.svelte';
 import DetailedOffers from '../../components/DetailedOffers.svelte';
 import Faq from '../../components/Faq.svelte';
 import ContactForm from '../../components/ContactForm.svelte';
+import RichText from '../../components/RichText.svelte';
 
 /**
  * Init Storyblok
@@ -24,7 +25,8 @@ storyblokInit({
     offers: Offers,
     detailedOffers: DetailedOffers,
     faq: Faq,
-    contactForm: ContactForm
+    contactForm: ContactForm,
+    text: RichText,
   },
 });
 

@@ -90,8 +90,14 @@
 	</div>
 	<div class="bg-gray-900">
 		<div class="container px-4 mx-auto">
-			<div class="py-5 text-center">
-				<p class="text-gray-300">© Kerstin Kaufmann, Beyondmorrow e.U. 2022 All rights reserved.</p>
+			<div class="py-5 text-center text-gray-300 flex">
+				<p class="flex-none">© Kerstin Kaufmann, Beyondmorrow e.U. 2022 All rights reserved.</p>
+				<div class="grow"></div>
+				<div class="flex-none">
+					<a class="ml-5 underline" href="/impressum">Impressum</a>
+					<a class="ml-5 underline" href="/datenschutz">Datenschutz</a>
+					<a class="ml-5 underline" href="/agb">AGB</a>
+				</div>
 			</div>
 		</div>
 	</div>

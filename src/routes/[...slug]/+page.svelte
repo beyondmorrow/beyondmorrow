@@ -9,7 +9,7 @@
 	});
 </script>
 
-<div>
+<div class="mb-20">
 	{#if data.story}
 		<StoryblokComponent blok={data.story.content} />
 	{/if}
