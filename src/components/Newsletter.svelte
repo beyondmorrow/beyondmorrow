@@ -14,9 +14,9 @@
 		})
 
 		if (response.status === 200) {
-			if (response.json().status === 'pending') {
+			if (response.clone().json().status === 'pending') {
 				successMessage = "Vielen Dank für's anmelden. Bitte bestätige das E-Mail in deinem Postfach."
-			} else if (response.json().status === 'subscribed') {
+			} else if (response.clone().json().status === 'subscribed') {
 				successMessage = "Vielen Dank. Du bist bereits für meinen Newsletter angemeldet."
 			}
 			displaySuccessMessage = true;
