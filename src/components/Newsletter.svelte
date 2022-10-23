@@ -14,10 +14,10 @@
 		})
 
 		if (response.status === 200) {
-			const body = response.json().body;
-			if (body.status === 'pending') {
+			const responseObject = response.json();
+			if (responseObject.body.status === 'pending') {
 				successMessage = "Vielen Dank für's anmelden. Bitte bestätige das E-Mail in deinem Postfach."
-			} else if (body.status === 'subscribed') {
+			} else if (responseObject.body.status === 'subscribed') {
 				successMessage = "Vielen Dank. Du bist bereits für meinen Newsletter angemeldet."
 			}
 			displaySuccessMessage = true;
