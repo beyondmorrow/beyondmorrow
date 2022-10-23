@@ -13,7 +13,7 @@
 			})
 		})
 
-		console.log(JSON.stringify(response));
+		console.log(JSON.stringify(response.clone().body));
 
 		if (response.status === 200) {
 			if (response.clone().json().status === 'pending') {
