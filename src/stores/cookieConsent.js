@@ -1,7 +1,7 @@
 import { writable } from "svelte/store";
 import { browser } from '$app/environment';
 
-export let consent = undefined;
+export let consent = null;
 
 if (browser) {
     let storedConsent = localStorage.getItem('consent');

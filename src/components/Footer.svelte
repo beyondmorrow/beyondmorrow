@@ -1,7 +1,7 @@
 <script>
 	import Newsletter from './Newsletter.svelte';
 	import * as c from '../pathConst';
-	import { consent, revokeConsent } from '../modules/cookieBanner';
+	import { revokeConsent, consent } from '../modules/cookieBanner';
 
 	const footerHeadingLeft = 'Hilfe';
 	const footerMenuLeft = [
@@ -45,7 +45,7 @@
 		<div class="pt-24 pb-16">
 			<div class="flex flex-wrap -mx-4 justify-between">
 				<div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-10 lg:mb-0 text-center">
-					<a class="inline-block mb-6 invert m-auto" href="#">
+					<a class="inline-block mb-6 invert m-auto" href="/">
 						<img src="/logo/logo-image.png" alt="" width="87" />
 					</a>
 					<p class="leading-8 mb-6 text-white">We're all just walking each other home.</p>
@@ -92,7 +92,7 @@
 				<p class="flex-none">© Kerstin Kaufmann, Beyondmorrow e.U. 2022 All rights reserved.</p>
 				<div class="grow" />
 				<div class="flex-none">
-					{#if $consent !== null}
+					{#if $consent === String(true) || $consent === String(false)}
 						<button class="underline mr-5 " on:click={revokeConsent}>
 							Cookie-Einstellungen zurücksetzen
 						</button>

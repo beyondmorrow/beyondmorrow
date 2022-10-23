@@ -2,7 +2,7 @@
 	import { fly } from 'svelte/transition';
 	import * as c from '../pathConst';
 	import { onMount } from 'svelte';
-	import { consent, accept, decline } from '../modules/cookieBanner';
+	import { accept, decline, consent } from '../modules/cookieBanner';
 
 	let ready = false;
 
@@ -11,10 +11,10 @@
 	});
 </script>
 
-{#if ready && $consent === null}
+{#if ready && $consent !== String(true) && $consent !== String(false)}
 	<div
 		transition:fly={{ y: 200, duration: 2500 }}
-		class="max-w-screen-lg mx-auto fixed bg-beyondrose-100 inset-x-5 p-5 bottom-5 rounded-lg flex gap-4 flex-wrap md:flex-nowrap text-center md:text-left items-center justify-center md:justify-between shadow-2xl"
+		class="max-w-screen-lg mx-auto fixed bg-beyondrose-100 inset-x-5 p-5 bottom-8 rounded-lg flex gap-4 flex-wrap md:flex-nowrap text-center md:text-left items-center justify-center md:justify-between shadow-2xl"
 	>
 		<div class="w-full">
 			Diese Website verwendet Cookies, um ein besseres Nutzererlebnis zu gewährleisten.

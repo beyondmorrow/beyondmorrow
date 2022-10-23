@@ -1,15 +1,16 @@
 import { consent } from '../stores/cookieConsent'
+import { get } from 'svelte/store'
 
-export function accept() {
+function accept() {
     consent.set(String(true));
 }
 
-export function decline() {
+function decline() {
     consent.set(String(false));
 }
 
-export function revokeConsent() {
+function revokeConsent() {
     consent.set(null);
 }
 
-export { consent };
+export { accept, decline, revokeConsent, consent };
