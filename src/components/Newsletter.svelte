@@ -1,7 +1,6 @@
 <script>
 	let displayErrorMessage = false;
 	let displaySuccessMessage = false;
-	let successMessage = ;
 
 	export async function handleSubmit(event) {
 		const formData = new FormData(this);
@@ -12,7 +11,7 @@
 				email: formData.get('email').toString(),
 			})
 		})
-		
+
 		if (response.status === 200) {
 			displaySuccessMessage = true;
 		} else {
