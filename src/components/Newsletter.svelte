@@ -1,6 +1,7 @@
 <script>
 	let displayErrorMessage = false;
 	let displaySuccessMessage = false;
+	let successMessage = "Vielen Dank für's anmelden. Bitte bestätige das E-Mail in deinem Postfach.";
 
 	export async function handleSubmit(event) {
 		const formData = new FormData(this);
@@ -13,6 +14,11 @@
 		})
 
 		if (response.status === 200) {
+			if (response.body.status === 'pending') {
+				successMessage = "Vielen Dank für's anmelden. Bitte bestätige das E-Mail in deinem Postfach."
+			} else if (response.body.status === 'subscribed') {
+				successMessage = "Vielen Dank. Du bist bereits für meinen Newsletter angemeldet."
+			}
 			displaySuccessMessage = true;
 		} else {
 			displayErrorMessage = true;
@@ -24,7 +30,7 @@
 	<h5 class="text-xl font-bold mb-5 text-white">Newsletter</h5>
 	{#if displaySuccessMessage}
 		<div class="">
-			<span>Vielen Dank für's anmelden. Bitte bestätige das E-Mail in deinem Postfach.</span>
+			<span>{successMessage}</span>
 		</div>
 	{:else if displayErrorMessage}
 		<div class="">
