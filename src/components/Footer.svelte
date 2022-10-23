@@ -1,24 +1,25 @@
 <script>
-	import Newsletter from "./Newsletter.svelte";
+	import Newsletter from './Newsletter.svelte';
 	import * as c from '../pathConst';
+	import { consent, revokeConsent } from '../modules/cookieBanner';
 
 	const footerHeadingLeft = 'Hilfe';
 	const footerMenuLeft = [
 		{
 			name: 'FAQ',
-			link: c.PATH_FAQ,
+			link: c.PATH_FAQ
 		},
 		{
 			name: 'Stundenplan',
-			link: c.PATH_TIMETABLE,
+			link: c.PATH_TIMETABLE
 		},
 		{
 			name: 'Preise',
-			link: c.PATH_PRICES,
+			link: c.PATH_PRICES
 		},
 		{
 			name: 'Kontakt',
-			link: c.PATH_CONTACT,
+			link: c.PATH_CONTACT
 		}
 	];
 
@@ -26,15 +27,15 @@
 	const footerMenuRight = [
 		{
 			name: 'Yoga',
-			link: c.PATH_YOGA,
+			link: c.PATH_YOGA
 		},
 		{
 			name: 'Meditation',
-			link: c.PATH_MEDITATION_SOUND,
+			link: c.PATH_MEDITATION_SOUND
 		},
 		{
 			name: 'Retreats & Events',
-			link: c.PATH_RETREATS_EVENTS,
+			link: c.PATH_RETREATS_EVENTS
 		}
 	];
 </script>
@@ -44,7 +45,7 @@
 		<div class="pt-24 pb-16">
 			<div class="flex flex-wrap -mx-4 justify-between">
 				<div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-10 lg:mb-0 text-center">
-					<a class="inline-block mb-6 invert m-auto" href="/">
+					<a class="inline-block mb-6 invert m-auto" href="#">
 						<img src="/logo/logo-image.png" alt="" width="87" />
 					</a>
 					<p class="leading-8 mb-6 text-white">We're all just walking each other home.</p>
@@ -81,19 +82,24 @@
 						{/each}
 					</ul>
 				</div>
-				<Newsletter/>
+				<Newsletter />
 			</div>
 		</div>
 	</div>
 	<div class="bg-gray-900">
 		<div class="container px-4 mx-auto">
-			<div class="py-5 text-center text-gray-300 flex">
+			<div class="py-5 text-center text-gray-300 lg:flex md:flex">
 				<p class="flex-none">© Kerstin Kaufmann, Beyondmorrow e.U. 2022 All rights reserved.</p>
-				<div class="grow"></div>
+				<div class="grow" />
 				<div class="flex-none">
-					<a class="ml-5 underline" href="{c.PATH_IMPRINT}">Impressum</a>
-					<a class="ml-5 underline" href="{c.PATH_PRIVACY}">Datenschutz</a>
-					<a class="ml-5 underline" href="{c.PATH_TC}">AGB</a>
+					{#if $consent !== null}
+						<button class="underline mr-5 " on:click={revokeConsent}>
+							Cookie-Einstellungen zurücksetzen
+						</button>
+					{/if}
+					<a class="underline" href={c.PATH_IMPRINT}>Impressum</a>
+					<a class="ml-5 underline" href={c.PATH_TC}>AGB</a>
+					<a class="ml-5 underline" href={c.PATH_PRIVACY}>Datenschutz</a>
 				</div>
 			</div>
 		</div>
