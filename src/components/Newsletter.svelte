@@ -13,6 +13,8 @@
 			})
 		})
 
+		console.log(JSON.stringify(response.clone().json()));
+
 		if (response.status === 200) {
 			if (response.clone().json().status === 'pending') {
 				successMessage = "Vielen Dank für's anmelden. Bitte bestätige das E-Mail in deinem Postfach."
@@ -29,11 +31,11 @@
 <div class="text-white w-full md:w-1/2 lg:w-1/4 px-4">
 	<h5 class="text-xl font-bold mb-5 text-white">Newsletter</h5>
 	{#if displaySuccessMessage}
-		<div class="">
+		<div>
 			<span>{successMessage}</span>
 		</div>
 	{:else if displayErrorMessage}
-		<div class="">
+		<div>
 			<span
 				>Leider ist bei der Anmeldung ein fehler aufgetreten. Bitte kontaktiere mich per <a
 					href="mailto:kerstin@beyondmorrow.com">E-Mail</a
