@@ -1,6 +1,7 @@
 <script>
 	import { storyblokEditable } from '@storyblok/svelte';
 	import Button from './Button.svelte';
+	import * as c from '../pathConst'
 
 	export let blok;
 
@@ -80,7 +81,7 @@
 				</div>
 				<div class="mt-5 text-center">
 					<Button link="/{offer.callToActionLink.cached_url}" text={offer.callToAction} />
-					<a class="ml-3 underline" href="/preise">Zu den Preisen</a>
+					<a class="ml-3 underline" href="{c.PATH_PRICES}">Zu den Preisen</a>
 				</div>
 			</div>
 		</section>

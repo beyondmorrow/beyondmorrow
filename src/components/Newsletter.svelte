@@ -1,4 +1,6 @@
 <script>
+	import * as c from '../pathConst'
+
 	let displayErrorMessage = false;
 	let displaySuccessMessage = false;
 
@@ -52,7 +54,7 @@
 			</div>
 			<p class="mt-2 text-xs">
 				Mit dem Klick auf 'Anmelden' stimmst du zu, dass ich deine Informationen im Rahmen meiner
-				<a href="/datenschutz">Datenschutzerklärung</a> verarbeite.
+				<a href="{c.PATH_PRIVACY}">Datenschutzerklärung</a> verarbeite.
 			</p>
 		</form>
 	{/if}

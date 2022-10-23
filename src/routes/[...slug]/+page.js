@@ -4,12 +4,12 @@ import { storyblokInit, apiPlugin, useStoryblokApi } from "@storyblok/svelte";
 import Heading from '../../components/Heading.svelte';
 import Page from '../../components/Page.svelte';
 import Image from '../../components/Image.svelte';
-import Quote from '../../components/Quote.svelte';
 import Offers from '../../components/Offers.svelte';
 import DetailedOffers from '../../components/DetailedOffers.svelte';
 import Faq from '../../components/Faq.svelte';
 import ContactForm from '../../components/ContactForm.svelte';
 import RichText from '../../components/RichText.svelte';
+import Timetable from '../../components/Timetable.svelte';
 
 /**
  * Init Storyblok
@@ -21,12 +21,12 @@ storyblokInit({
     heading: Heading,
     page: Page,
     image: Image,
-    quote: Quote,
     offers: Offers,
     detailedOffers: DetailedOffers,
     faq: Faq,
     contactForm: ContactForm,
     text: RichText,
+    timetable: Timetable,
   },
 });
 

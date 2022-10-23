@@ -2,6 +2,7 @@
 	import { fade, scale } from 'svelte/transition';
 	import { page } from '$app/stores';
 	import Button from './Button.svelte';
+	import * as c from '../pathConst';
 
 	let displayMobileNav = false;
 	function handleMobileNav() {
@@ -11,23 +12,26 @@
 	const navEntries = [
 		{
 			name: 'Über mich',
-			link: '/about'
+			link: c.PATH_ABOUT,
 		},
 		{
 			name: 'Yoga',
-			link: '/yoga'
+			link: c.PATH_YOGA,
 		},
 		{
 			name: 'Meditation & Klang',
-			link: '/meditation-klang'
+			link: c.PATH_MEDITATION_SOUND,
 		},
 		{
 			name: 'Retreats & Events',
-			link: '/retreats-events'
+			link: c.PATH_RETREATS_EVENTS,
+		},
+		{
+
 		},
 		{
 			name: 'Kontakt',
-			link: '/contact'
+			link: c.PATH_CONTACT,
 		}
 	];
 </script>

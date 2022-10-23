@@ -1,23 +1,24 @@
 <script>
 	import Newsletter from "./Newsletter.svelte";
+	import * as c from '../pathConst';
 
 	const footerHeadingLeft = 'Hilfe';
 	const footerMenuLeft = [
 		{
 			name: 'FAQ',
-			link: '/faq'
+			link: c.PATH_FAQ,
 		},
 		{
 			name: 'Stundenplan',
-			link: '/stundenplan'
+			link: c.PATH_TIMETABLE,
 		},
 		{
 			name: 'Preise',
-			link: '/preise'
+			link: c.PATH_PRICES,
 		},
 		{
 			name: 'Kontakt',
-			link: '/contact'
+			link: c.PATH_CONTACT,
 		}
 	];
 
@@ -25,19 +26,15 @@
 	const footerMenuRight = [
 		{
 			name: 'Yoga',
-			link: '/yoga'
+			link: c.PATH_YOGA,
 		},
 		{
 			name: 'Meditation',
-			link: '/meditation'
-		},
-		{
-			name: 'Healing Arts',
-			link: '/healing-arts'
+			link: c.PATH_MEDITATION_SOUND,
 		},
 		{
 			name: 'Retreats & Events',
-			link: '/retreats-events'
+			link: c.PATH_RETREATS_EVENTS,
 		}
 	];
 </script>
@@ -47,7 +44,7 @@
 		<div class="pt-24 pb-16">
 			<div class="flex flex-wrap -mx-4 justify-between">
 				<div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-10 lg:mb-0 text-center">
-					<a class="inline-block mb-6 invert m-auto" href="#">
+					<a class="inline-block mb-6 invert m-auto" href="/">
 						<img src="/logo/logo-image.png" alt="" width="87" />
 					</a>
 					<p class="leading-8 mb-6 text-white">We're all just walking each other home.</p>
@@ -94,9 +91,9 @@
 				<p class="flex-none">© Kerstin Kaufmann, Beyondmorrow e.U. 2022 All rights reserved.</p>
 				<div class="grow"></div>
 				<div class="flex-none">
-					<a class="ml-5 underline" href="/impressum">Impressum</a>
-					<a class="ml-5 underline" href="/datenschutz">Datenschutz</a>
-					<a class="ml-5 underline" href="/agb">AGB</a>
+					<a class="ml-5 underline" href="{c.PATH_IMPRINT}">Impressum</a>
+					<a class="ml-5 underline" href="{c.PATH_PRIVACY}">Datenschutz</a>
+					<a class="ml-5 underline" href="{c.PATH_TC}">AGB</a>
 				</div>
 			</div>
 		</div>

@@ -1,0 +1,13 @@
+export const PATH_ABOUT = '/ueber-mich';
+export const PATH_YOGA = '/yoga';
+export const PATH_MEDITATION_SOUND = '/meditation-klang';
+export const PATH_RETREATS_EVENTS = '/retreats-events';
+export const PATH_CONTACT = '/kontakt';
+export const PATH_FAQ = '/faq';
+export const PATH_TIMETABLE = '/studio/stundenplan';
+export const PATH_PRICES = '/studio/preise';
+export const PATH_ETIQUETTE = '/studio/etikette';
+export const PATH_TEAM = '/studio/lehrerinnen';
+export const PATH_IMPRINT = '/impressum';
+export const PATH_PRIVACY = '/datenschutz';
+export const PATH_TC = '/agb';

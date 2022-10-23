@@ -2,6 +2,7 @@
 	import { storyblokEditable } from '@storyblok/svelte';
 	import { page } from '$app/stores';
 	import Heading from './Heading.svelte';
+	import * as c from '../pathConst';
 
 	export let blok;
 
@@ -14,13 +15,13 @@
 				return {
 					text: "Auf der Suche nach Ruhe? Probier's mal mit ",
 					linkText: 'Meditation',
-					href: '/meditation-klang'
+					href: c.PATH_MEDITATION_SOUND
 				};
 			case '/meditation-klang':
 				return {
 					text: "Auf der Suche nach etwas bewegterem? Probier's mal mit ",
 					linkText: 'Yoga',
-					href: '/yoga'
+					href: c.PATH_YOGA
 				};
 			default:
 				return null;
