@@ -27,7 +27,26 @@
 			link: c.PATH_RETREATS_EVENTS,
 		},
 		{
-
+			name: 'Studio',
+			link: c.PATH_STUDIO,
+			submenu: [
+				 {
+					name: 'Stundenplan',
+					link: c.PATH_TIMETABLE,
+				 },
+				 {
+					name: 'Preise',
+					link: c.PATH_PRICES,
+				 },
+				 {
+					name: 'Etikette',
+					link: c.PATH_ETIQUETTE,
+				 },
+				 {
+					name: 'Lehrerinnen',
+					link: c.PATH_TEAM,
+				 }
+			],
 		},
 		{
 			name: 'Kontakt',
