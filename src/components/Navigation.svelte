@@ -70,10 +70,10 @@
 				<a class="inline-block" href="/">
 					<img src="/logo/logo-text.png" alt="logo" class="w-40 sm:w-72" />
 				</a>
-				<button on:click={handleMobileNav} class="lg:hidden navbar-burger">
+				<button on:click={handleMobileNav} class="xl:hidden navbar-burger">
 					<img src="/icons/nav-burger.svg" alt="Menü" class="w-7" />
 				</button>
-				<div class="hidden lg:block ml-auto mr-14">
+				<div class="hidden xl:block ml-auto">
 					<ul class="inline-flex">
 						{#each navEntries as entry}
 							{#if entry.hasOwnProperty('submenu')}
@@ -124,7 +124,7 @@
 						{/each}
 					</ul>
 				</div>
-				<div class="hidden lg:block">
+				<div class="hidden xl:block ml-14">
 					<Button />
 				</div>
 			</div>
