@@ -1,5 +1,5 @@
 <script>
-	import { fade, scale } from 'svelte/transition';
+	import { fade, scale, slide } from 'svelte/transition';
 	import { page } from '$app/stores';
 	import Button from './Button.svelte';
 	import * as c from '../pathConst';
@@ -7,6 +7,14 @@
 	let displayMobileNav = false;
 	function handleMobileNav() {
 		displayMobileNav = !displayMobileNav;
+	}
+
+	let displayDropdown = false;
+	function showDropdown() {
+		displayDropdown = true;
+	}
+	function hideDropdown() {
+		displayDropdown = false;
 	}
 
 	const navEntries = [
@@ -68,13 +76,51 @@
 				<div class="hidden lg:block ml-auto mr-14">
 					<ul class="inline-flex">
 						{#each navEntries as entry}
-							<li class="mr-8">
-								<a
-									class:text-beyondgrey={$page.url.pathname === entry.link}
-									class="inline-block hover:text-gray-900 text-lg"
-									href={entry.link}>{entry.name}</a
+							{#if entry.hasOwnProperty('submenu')}
+								<li
+									class="mr-8"
+									on:mouseover={showDropdown}
+									on:focus={showDropdown}
+									on:mouseleave={hideDropdown}
 								>
-							</li>
+									<a
+										class:text-beyondgrey={$page.url.pathname === entry.link}
+										class="hover:text-gray-700 text-lg"
+										href={entry.link}
+									>
+										{entry.name}
+										<div class="float-right">
+											<img class="w-4 mt-2" src="/icons/drop-down.svg" alt="" />
+										</div>
+									</a>
+									{#if displayDropdown}
+										<div in:slide="{{duration: 600}}" out:slide={{duration: 0}} class="bg-slate-50 text-black p-4 absolute shadow-xl">
+											<ul>
+												{#each entry.submenu as subEntry}
+													<li class="mb-1">
+														<a
+															on:click={hideDropdown}
+															class:text-beyondgrey={$page.url.pathname === subEntry.link}
+															class="hover:text-gray-700 text-md"
+															href={subEntry.link}>{subEntry.name}</a
+														>
+													</li>
+												{/each}
+											</ul>
+										</div>
+									{/if}
+								</li>
+							{:else}
+								<li class="mr-8">
+									<a
+										class:text-beyondgrey={$page.url.pathname === entry.link}
+										class="hover:text-gray-700 text-lg"
+										href={entry.link}
+									>
+										{entry.name}
+									</a>
+								</li>
+							{/if}
 						{/each}
 					</ul>
 				</div>
@@ -110,21 +156,21 @@
 									class:text-beyondgrey={$page.url.pathname === entry.link}
 									class="inline-block hover:text-gray-900"
 									href={entry.link}>{entry.name}</a
-								>								
+								>
 							</li>
 							{#if entry.hasOwnProperty('submenu')}
-									<ul>
-										{#each entry.submenu as subEntry}
-											<li on:click={handleMobileNav} class="py-3">
-												<a
-													class:text-beyondgrey={$page.url.pathname === subEntry.link}
-													class="inline-block hover:text-gray-900"
-													href={subEntry.link}>{subEntry.name}</a
-												>
-											</li>
-										{/each}
-									</ul>
-								{/if}
+								<ul>
+									{#each entry.submenu as subEntry}
+										<li on:click={handleMobileNav} class="py-3">
+											<a
+												class:text-beyondgrey={$page.url.pathname === subEntry.link}
+												class="inline-block hover:text-gray-900"
+												href={subEntry.link}>{subEntry.name}</a
+											>
+										</li>
+									{/each}
+								</ul>
+							{/if}
 						{/each}
 					</ul>
 				</div>
