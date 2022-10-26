@@ -1,5 +1,5 @@
 import { storyblokInit, apiPlugin, useStoryblokApi } from "@storyblok/svelte";
- import { PUBLIC_STORYBLOK_TOKEN } from '$env/static/public';
+import { PUBLIC_STORYBLOK_TOKEN } from '$env/static/public';
 
 import Heading from '../../components/Heading.svelte';
 import Page from '../../components/Page.svelte';
@@ -10,6 +10,7 @@ import Faq from '../../components/Faq.svelte';
 import ContactForm from '../../components/ContactForm.svelte';
 import RichText from '../../components/RichText.svelte';
 import Timetable from '../../components/Timetable.svelte';
+import Events from '../../components/Events.svelte';
 
 /**
  * Init Storyblok
@@ -27,6 +28,7 @@ storyblokInit({
     contactForm: ContactForm,
     text: RichText,
     timetable: Timetable,
+    events: Events,
   },
 });
 
