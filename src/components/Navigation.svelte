@@ -88,13 +88,17 @@
 										class="hover:text-gray-700 text-lg"
 										href={entry.link}
 									>
-										{entry.name}
-										<div class="float-right">
-											<img class="w-4 mt-2" src="/icons/drop-down.svg" alt="" />
+										<div class="flex items-center justify-center">
+											<span class="mr-1">{entry.name}</span>
+											<img class="mt-1 w-2.5" src="/icons/arrow-down.svg" alt="" />
 										</div>
 									</a>
 									{#if displayDropdown}
-										<div in:slide="{{duration: 600}}" out:slide={{duration: 0}} class="bg-slate-50 text-black p-4 absolute shadow-xl">
+										<div
+											in:slide={{ duration: 600 }}
+											out:slide={{ duration: 0 }}
+											class="bg-slate-50 text-black p-4 absolute shadow-xl"
+										>
 											<ul>
 												{#each entry.submenu as subEntry}
 													<li class="mb-1">
