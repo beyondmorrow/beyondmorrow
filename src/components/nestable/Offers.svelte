@@ -6,9 +6,6 @@
 
 	export let blok;
 
-	// Size for Heading component
-	blok.size = 'h1';
-
 	function alternative() {
 		switch ($page.url.pathname) {
 			case '/yoga':

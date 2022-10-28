@@ -2,6 +2,7 @@
 	import { useStoryblokApi } from '@storyblok/svelte';
 	import * as c from '../../pathConst';
 	import LoadingSpinner from '../internal/LoadingSpinner.svelte';
+	import { getFormattedDate, isPastEvent } from '../../modules/dateHandler';
 
 	export let blok;
 	let events = null;
@@ -27,50 +28,6 @@
 			})
 		}
 	});
-
-	function getFormattedDate(event) {
-		const startingDate = new Date(event.startingDate);
-		const endDate =
-			event.hasOwnProperty('endDate') && event.endDate.length > 0 ? new Date(event.endDate) : null;
-
-		const startingDateLocaleString = startingDate.toLocaleString('de-AT', {
-			timeStyle: 'short',
-			dateStyle: 'medium'
-		});
-		const startingDateLocaleDateString = startingDate.toLocaleDateString('de-AT');
-
-		if (endDate) {
-			const sameDay =
-				startingDate.getFullYear() === endDate.getFullYear() &&
-				startingDate.getMonth() === endDate.getMonth() &&
-				startingDate.getDay() === endDate.getDay();
-
-			const endDateLocaleTimeString = endDate.toLocaleTimeString('de-AT', { timeStyle: 'short' });
-			const endDateLocaleDateString = endDate.toLocaleDateString('de-AT');
-
-			if (sameDay) {
-				return `${startingDateLocaleString} - ${endDateLocaleTimeString}`;
-			} else {
-				return `${startingDateLocaleDateString} - ${endDateLocaleDateString}`;
-			}
-		}
-
-		const timeSpecified = startingDate.getHours() !== 0 && startingDate.getMinutes !== 0;
-		if (timeSpecified) {
-			return startingDateLocaleString;
-		} else {
-			return startingDateLocaleDateString;
-		}
-	}
-
-	function isPastEvent(event) {
-		const startingDate = new Date(event.startingDate);
-		if (startingDate < dateToday) {
-			return true;
-		} else {
-			return false;
-		}
-	}
 </script>
 
 <div>
@@ -97,9 +54,9 @@
 						</div>
 						<div class="p-5 text-center">
 							<h3 class="font-spectral text-xl font-semibold italic text-beyondpurple-900">
-								{event.content.body[0].title}
+								{event.content.body[0].heading}
 							</h3>
-							<h4 class="font-spectral text-md">{event.content.body[0].subtitle}</h4>
+							<h4 class="font-spectral text-md">{event.content.body[0].subheading}</h4>
 							<div class="flex items-center my-3">
 								<div class="flex-grow h-px bg-slate-300" />
 								<span class="flex-shrink text-2xl text-beyondgrey px-3 pb-1"

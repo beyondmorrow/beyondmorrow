@@ -2,6 +2,10 @@
 	import { storyblokEditable } from '@storyblok/svelte';
 
 	export let blok;
+
+	if (blok.hasOwnProperty('size') === false) {
+		blok.size = 'h1';
+	}
 </script>
 
 <div use:storyblokEditable={blok} class="w-full pt-20 pb-5 text-center">
