@@ -1,7 +1,7 @@
 <script>
 	import { storyblokEditable } from '@storyblok/svelte';
 	import { renderRichText } from '@storyblok/svelte';
-	import Button from './Button.svelte';
+	import Button from '../internal/Button.svelte';
 	import Heading from './Heading.svelte';
 
 	export let blok;
