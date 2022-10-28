@@ -1,5 +1,5 @@
 <script>
-	import * as c from '../pathConst'
+	import * as c from '../../pathConst'
 
 	let displayErrorMessage = false;
 	let displaySuccessMessage = false;

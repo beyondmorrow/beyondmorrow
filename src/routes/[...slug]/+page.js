@@ -1,16 +1,19 @@
 import { storyblokInit, apiPlugin, useStoryblokApi } from "@storyblok/svelte";
 import { PUBLIC_STORYBLOK_TOKEN } from '$env/static/public';
 
-import Heading from '../../components/Heading.svelte';
-import Page from '../../components/Page.svelte';
-import Image from '../../components/Image.svelte';
-import Offers from '../../components/Offers.svelte';
-import DetailedOffers from '../../components/DetailedOffers.svelte';
-import Faq from '../../components/Faq.svelte';
-import ContactForm from '../../components/ContactForm.svelte';
-import RichText from '../../components/RichText.svelte';
-import Timetable from '../../components/Timetable.svelte';
-import Events from '../../components/Events.svelte';
+import GenericPage from '../../components/contentType/GenericPage.svelte';
+import EventPage from '../../components/contentType/EventPage.svelte';
+
+import Heading from '../../components/nestable/Heading.svelte';
+import Image from '../../components/nestable/Image.svelte';
+import Offers from '../../components/nestable/Offers.svelte';
+import DetailedOffers from '../../components/nestable/DetailedOffers.svelte';
+import Faq from '../../components/nestable/Faq.svelte';
+import ContactForm from '../../components/nestable/ContactForm.svelte';
+import RichText from '../../components/nestable/RichText.svelte';
+import Timetable from '../../components/nestable/Timetable.svelte';
+import Events from '../../components/nestable/Events.svelte';
+import Event from '../../components/nestable/Event.svelte';
 
 /**
  * Init Storyblok
@@ -19,8 +22,11 @@ storyblokInit({
   accessToken: PUBLIC_STORYBLOK_TOKEN,
   use: [apiPlugin],
   components: {
+    // Content Type Components
+    eventPage: EventPage,
+    page: GenericPage,
+    // Nestable Components
     heading: Heading,
-    page: Page,
     image: Image,
     offers: Offers,
     detailedOffers: DetailedOffers,
@@ -29,6 +35,7 @@ storyblokInit({
     text: RichText,
     timetable: Timetable,
     events: Events,
+    event: Event, 
   },
 });
 

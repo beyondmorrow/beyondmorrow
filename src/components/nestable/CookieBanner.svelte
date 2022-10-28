@@ -1,8 +1,8 @@
 <script>
 	import { fly } from 'svelte/transition';
-	import * as c from '../pathConst';
+	import * as c from '../../pathConst';
 	import { onMount } from 'svelte';
-	import { accept, decline, consent } from '../modules/cookieBanner';
+	import { accept, decline, consent } from '../../modules/cookieBanner';
 
 	let ready = false;
 

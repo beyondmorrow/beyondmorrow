@@ -1,6 +1,6 @@
 <script>
-	import { consent, accept } from '../modules/cookieBanner';
-	import * as c from '../pathConst';
+	import { consent, accept } from '../../modules/cookieBanner';
+	import * as c from '../../pathConst';
 	import { onMount } from 'svelte';
 
 	let ready = false;

@@ -1,7 +1,7 @@
 <script>
 	import Newsletter from './Newsletter.svelte';
-	import * as c from '../pathConst';
-	import { revokeConsent, consent } from '../modules/cookieBanner';
+	import * as c from '../../pathConst';
+	import { revokeConsent, consent } from '../../modules/cookieBanner';
 
 	const footerHeadingLeft = 'Hilfe';
 	const footerMenuLeft = [

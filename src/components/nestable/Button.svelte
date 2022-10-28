@@ -1,5 +1,5 @@
 <script>
-    import * as c from '../pathConst';
+    import * as c from '../../pathConst';
 
     export let link = c.PATH_CONTACT;
     export let text = "Buchen";

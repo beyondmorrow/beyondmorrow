@@ -2,7 +2,7 @@
 	import { fade, scale, slide } from 'svelte/transition';
 	import { page } from '$app/stores';
 	import Button from './Button.svelte';
-	import * as c from '../pathConst';
+	import * as c from '../../pathConst';
 
 	let displayMobileNav = false;
 	function handleMobileNav() {

@@ -2,7 +2,7 @@
 	import { storyblokEditable } from '@storyblok/svelte';
 	import { page } from '$app/stores';
 	import Heading from './Heading.svelte';
-	import * as c from '../pathConst';
+	import * as c from '../../pathConst';
 
 	export let blok;
 

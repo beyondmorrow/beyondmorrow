@@ -1,8 +1,8 @@
 <script>
 	import '../../app.postcss';
-	import Footer from '../../components/Footer.svelte';
-	import Navigation from '../../components/Navigation.svelte';
-	import CookieBanner from '../../components/CookieBanner.svelte';
+	import Footer from '../../components/nestable/Footer.svelte';
+	import Navigation from '../../components/nestable/Navigation.svelte';
+	import CookieBanner from '../../components/nestable/CookieBanner.svelte';
 </script>
 
 <main>
