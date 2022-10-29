@@ -2,6 +2,8 @@
 	import Heading from './Heading.svelte';
 	import { getFormattedDate } from '../../modules/dateHandler';
 	import RichText from './RichText.svelte';
+	import Button from '../internal/Button.svelte';
+	import * as c from '../../pathConst'
 
 	export let blok;
 
@@ -16,7 +18,7 @@
 		<div>
 			<img src={blok.image.filename} alt={blok.image.alt} />
 		</div>
-		<div class="mx-10 my-20">
+		<div class="mx-10 my-16">
 			<div class="flex items-center justify-center text-3xl mb-5">
 				<img class="h-8" src="/icons/location.svg" alt="location" />
 				<span>{blok.location}</span>
@@ -31,6 +33,9 @@
 			</div>
 			<div class="text-center">
 				<span>{blok.shortDescription}</span>
+			</div>
+			<div class="mt-5 flex justify-center">
+				<Button link="{c.PATH_CONTACT}" text="Anmelden"/>
 			</div>
 		</div>
 	</div>
