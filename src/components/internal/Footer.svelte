@@ -49,7 +49,7 @@
 						<img src="/logo/logo-image.png" alt="" width="87" />
 					</a>
 					<p class="leading-8 mb-6 text-white">We're all just walking each other home.</p>
-					<div class="flex items-center">
+					<div class="flex items-center justify-center">
 						<a class="inline-block mr-4 invert" href="https://www.instagram.com/beyondmorrow_yoga/">
 							<img src="/icons/instagram.svg" alt="" />
 						</a>
@@ -58,7 +58,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="w-full md:w-1/2 lg:w-auto px-4 mb-10 lg:mb-0">
+				<div class="w-full md:w-1/2 lg:w-auto px-4 mb-10 lg:mb-0 text-center md:text-left">
 					<h5 class="text-xl font-bold mb-5 text-white">{footerHeadingLeft}</h5>
 					<ul>
 						{#each footerMenuLeft as menuItem}
@@ -70,7 +70,7 @@
 						{/each}
 					</ul>
 				</div>
-				<div class="w-full md:w-1/2 lg:w-auto px-4 mb-10 lg:mb-0">
+				<div class="w-full md:w-1/2 lg:w-auto px-4 mb-10 lg:mb-0 text-center md:text-left">
 					<h5 class="text-xl font-bold mb-5 text-white">{footerHeadingRight}</h5>
 					<ul>
 						{#each footerMenuRight as menuItem}
@@ -88,18 +88,18 @@
 	</div>
 	<div class="bg-gray-900">
 		<div class="container px-4 mx-auto">
-			<div class="py-5 text-center text-gray-300 lg:flex md:flex">
+			<div class="py-5 text-center text-gray-300 md:lg:flex">
 				<p class="flex-none">© Kerstin Kaufmann, Beyondmorrow e.U. 2022 All rights reserved.</p>
 				<div class="grow" />
-				<div class="flex-none">
+				<div class="flex gap-4 justify-center">
 					{#if $consent === String(true) || $consent === String(false)}
-						<button class="underline mr-5 " on:click={revokeConsent}>
+						<button class="underline" on:click={revokeConsent}>
 							Cookie-Einstellungen zurücksetzen
 						</button>
 					{/if}
 					<a class="underline" href={c.PATH_IMPRINT}>Impressum</a>
-					<a class="ml-5 underline" href={c.PATH_TC}>AGB</a>
-					<a class="ml-5 underline" href={c.PATH_PRIVACY}>Datenschutz</a>
+					<a class="underline" href={c.PATH_TC}>AGB</a>
+					<a class="underline" href={c.PATH_PRIVACY}>Datenschutz</a>
 				</div>
 			</div>
 		</div>
