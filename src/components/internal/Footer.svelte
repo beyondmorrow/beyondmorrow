@@ -43,8 +43,8 @@
 <section class="bg-black">
 	<div class="container px-4 mx-auto">
 		<div class="pt-24 pb-16">
-			<div class="flex flex-wrap -mx-4 justify-between">
-				<div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-10 lg:mb-0 text-center">
+			<div class="flex flex-wrap mx-1 justify-between">
+				<div class="w-full md:w-1/2 lg:w-1/4 mb-10 lg:mb-0 text-center">
 					<a class="inline-block mb-6 invert m-auto" href="/">
 						<img src="/logo/logo-image.png" alt="" width="87" />
 					</a>
@@ -58,7 +58,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="w-full md:w-1/2 lg:w-auto px-4 mb-10 lg:mb-0 text-center md:text-left">
+				<div class="w-full md:w-1/2 lg:w-auto mb-10 lg:mb-0 text-center lg:text-left">
 					<h5 class="text-xl font-bold mb-5 text-white">{footerHeadingLeft}</h5>
 					<ul>
 						{#each footerMenuLeft as menuItem}
@@ -70,7 +70,7 @@
 						{/each}
 					</ul>
 				</div>
-				<div class="w-full md:w-1/2 lg:w-auto px-4 mb-10 lg:mb-0 text-center md:text-left">
+				<div class="w-full md:w-1/2 lg:w-auto mb-10 lg:mb-0 text-center lg:text-left">
 					<h5 class="text-xl font-bold mb-5 text-white">{footerHeadingRight}</h5>
 					<ul>
 						{#each footerMenuRight as menuItem}
