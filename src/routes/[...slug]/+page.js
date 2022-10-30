@@ -15,6 +15,7 @@ import Timetable from '../../components/nestable/Timetable.svelte';
 import Events from '../../components/nestable/Events.svelte';
 import Event from '../../components/nestable/Event.svelte';
 import TextWithImage from '../../components/nestable/TextWithImage.svelte';
+import HeroBanner from '../../components/nestable/HeroBanner.svelte';
 
 /**
  * Init Storyblok
@@ -38,6 +39,7 @@ storyblokInit({
     events: Events,
     event: Event, 
     textWithImage: TextWithImage,
+    heroBanner: HeroBanner,
   },
 });
 

@@ -47,7 +47,7 @@
 					link: c.PATH_PRICES
 				},
 				{
-					name: 'Etikette',
+					name: 'Etiquette',
 					link: c.PATH_ETIQUETTE
 				},
 				{
