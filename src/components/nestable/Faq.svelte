@@ -21,7 +21,7 @@
 		if (isAnswerExpanded(uid)) {
 			expandedAnswers = arrayRemove(expandedAnswers, uid);
 		} else {
-            expandedAnswers = expandedAnswers.concat(uid);
+			expandedAnswers = expandedAnswers.concat(uid);
 		}
 	}
 
@@ -40,20 +40,16 @@
 			</div>
 			{#each blok.faqs as question}
 				{#key expandedAnswers}
-					<div on:click={expandAnswer(question._uid)} class="px-6 md:px-12 pt-8 pb-2 bg-beyondrose-100 mb-5">
-						<div class="flex -mx-4">
-							<div class="w-3/4 lg:w-5/6 px-4">
+					<div
+						on:click={expandAnswer(question._uid)}
+						class="px-4 md:px-12 pt-8 pb-2 bg-beyondrose-100 mb-5"
+					>
+						<div class="w-full">
+							<div class="flex justify-between items-start">
 								<h5 class="mb-6 text-xl font-spectral font-bold italic">
 									{question.question}
 								</h5>
-								{#if isAnswerExpanded(question._uid)}
-									<div id="customRichText" class="leading-8 text-gray-800 text-lg pb-5">
-										{@html renderRichText(question.answer)}
-									</div>
-								{/if}
-							</div>
-							<div class="flex-shrink-0 w-1/4 lg:w-1/6 px-4 text-right">
-								<button class="inline-block">
+								<button class="ml-2 w-6 shrink-0">
 									{#if isAnswerExpanded(question._uid)}
 										<img src="/icons/arrow-up.svg" alt="" />
 									{:else}
@@ -61,6 +57,11 @@
 									{/if}
 								</button>
 							</div>
+							{#if isAnswerExpanded(question._uid)}
+								<div id="customRichText" class=" leading-8 text-gray-800 text-lg pb-5">
+									{@html renderRichText(question.answer)}
+								</div>
+							{/if}
 						</div>
 					</div>
 				{/key}
@@ -73,7 +74,7 @@
 							<p class="italic">{blok.secondSubheading}</p>
 						</div>
 						<div class="w-full lg:w-2/6 px-4 text-center lg:text-right">
-							<Button link="{blok.buttonLink.cached_url}" text={blok.buttonText} />
+							<Button link={blok.buttonLink.cached_url} text={blok.buttonText} />
 						</div>
 					</div>
 				</div>
@@ -83,28 +84,28 @@
 </div>
 
 <style>
-    #customRichText :global(h1) {
-        @apply text-5xl;
-        @apply my-5;
-    }
-    #customRichText :global(h2) {
-        @apply text-4xl;
-        @apply my-5;
-    }
-    #customRichText :global(h3) {
-        @apply text-3xl;
-        @apply my-5;
-    }
-    #customRichText :global(ul) {
-        @apply list-disc;
-    }
-    #customRichText :global(li) {
-        margin-left: 2rem;
-    }
-    #customRichText :global(p) {
-        @apply my-1;
-    }
-    #customRichText :global(a) {
-        @apply underline;
-    }
+	#customRichText :global(h1) {
+		@apply text-5xl;
+		@apply my-5;
+	}
+	#customRichText :global(h2) {
+		@apply text-4xl;
+		@apply my-5;
+	}
+	#customRichText :global(h3) {
+		@apply text-3xl;
+		@apply my-5;
+	}
+	#customRichText :global(ul) {
+		@apply list-disc;
+	}
+	#customRichText :global(li) {
+		margin-left: 2rem;
+	}
+	#customRichText :global(p) {
+		@apply my-1;
+	}
+	#customRichText :global(a) {
+		@apply underline;
+	}
 </style>
