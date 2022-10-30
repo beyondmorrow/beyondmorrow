@@ -91,7 +91,7 @@
 			<div class="py-5 text-center text-gray-300 md:lg:flex">
 				<p class="flex-none">© Kerstin Kaufmann, Beyondmorrow e.U. 2022 All rights reserved.</p>
 				<div class="grow" />
-				<div class="flex gap-4 justify-center">
+				<div class="flex gap-4 justify-center flex-wrap">
 					{#if $consent === String(true) || $consent === String(false)}
 						<button class="underline" on:click={revokeConsent}>
 							Cookie-Einstellungen zurücksetzen

@@ -22,7 +22,7 @@
 	};
 </script>
 
-<div class="text-white w-full md:w-1/2 lg:w-1/4">
+<div class="text-white w-full max-w-sm md:w-1/2 lg:w-1/4 mx-auto text-center lg:mx-0 lg:text-left">
 	<h5 class="text-xl font-bold mb-5 text-white">Newsletter</h5>
 	{#if displaySuccessMessage}
 		<div>
