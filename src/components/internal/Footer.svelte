@@ -83,7 +83,7 @@
 					</ul>
 				</div>
 				<Newsletter />
-			</div>
+			</div>	
 		</div>
 	</div>
 	<div class="bg-gray-900">

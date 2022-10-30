@@ -14,6 +14,7 @@ import RichText from '../../components/nestable/RichText.svelte';
 import Timetable from '../../components/nestable/Timetable.svelte';
 import Events from '../../components/nestable/Events.svelte';
 import Event from '../../components/nestable/Event.svelte';
+import TextWithImage from '../../components/nestable/TextWithImage.svelte';
 
 /**
  * Init Storyblok
@@ -36,6 +37,7 @@ storyblokInit({
     timetable: Timetable,
     events: Events,
     event: Event, 
+    textWithImage: TextWithImage,
   },
 });
 
