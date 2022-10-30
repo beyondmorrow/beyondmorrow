@@ -40,12 +40,9 @@
 			</div>
 			{#each blok.faqs as question}
 				{#key expandedAnswers}
-					<div
-						on:click={expandAnswer(question._uid)}
-						class="px-4 md:px-12 pt-8 pb-2 bg-beyondrose-100 mb-5"
-					>
+					<div class="px-4 md:px-12 pt-8 pb-2 bg-beyondrose-100 mb-5">
 						<div class="w-full">
-							<div class="flex justify-between items-start">
+							<div on:click={expandAnswer(question._uid)} class="flex justify-between items-start">
 								<h5 class="mb-6 text-xl font-spectral font-bold italic">
 									{question.question}
 								</h5>

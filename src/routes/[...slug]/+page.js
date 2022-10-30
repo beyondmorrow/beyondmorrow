@@ -16,6 +16,7 @@ import Events from '../../components/nestable/Events.svelte';
 import Event from '../../components/nestable/Event.svelte';
 import TextWithImage from '../../components/nestable/TextWithImage.svelte';
 import HeroBanner from '../../components/nestable/HeroBanner.svelte';
+import RevokeConsent from '../../components/nestable/RevokeConsent.svelte';
 
 /**
  * Init Storyblok
@@ -40,6 +41,7 @@ storyblokInit({
     event: Event, 
     textWithImage: TextWithImage,
     heroBanner: HeroBanner,
+    revokeConsent: RevokeConsent,
   },
 });
 
