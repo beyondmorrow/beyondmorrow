@@ -43,11 +43,11 @@
 		<div class="text-center text-lg">{currentTestimonial.testimonial}</div>
 	</div>
     <!-- Navigation -->
-	<div class="flex justify-center items-center gap-10">
+	<div class="flex justify-center items-center gap-2">
 		<div class="w-5 hover:cursor-pointer" on:click={navigateLeft}>
 			<img src="/icons/arrow-left.svg" alt="arrow left" />
 		</div>
-		<div class="text-center font-spectral font-semibold italic w-16">
+		<div class="text-center font-spectral font-semibold italic w-32">
 			{currentTestimonial.name}
 		</div>
 		<div class="w-5 hover:cursor-pointer" on:click={navigateRight}>
