@@ -38,7 +38,7 @@
 			<div class="w-full lg:w-1/2 px-4 lg:pl-24 relative mb-20">
 				<div class="py-2 max-w-md xl:max-w-lg mx-auto relative">
 					<p class="text-beyondpurple-900 font-spectral font-semibold italic">{blok.question}</p>
-					{@html answerHTML}
+					<div id="customRichText">{@html answerHTML}</div>
 					<div class="mt-16 flex flex-wrap -mx-4">
 						<div class="w-full lg:w-1/2 px-4 mb-10">
 							<p class="text-gray-500">E-Mail</p>
@@ -128,3 +128,30 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	#customRichText :global(h1) {
+		@apply text-5xl;
+		@apply my-5;
+	}
+	#customRichText :global(h2) {
+		@apply text-4xl;
+		@apply my-5;
+	}
+	#customRichText :global(h3) {
+		@apply text-3xl;
+		@apply my-5;
+	}
+	#customRichText :global(ul) {
+		@apply list-disc;
+	}
+	#customRichText :global(li) {
+		margin-left: 2rem;
+	}
+	#customRichText :global(p) {
+		@apply my-1;
+	}
+	#customRichText :global(a) {
+		@apply underline;
+	}
+</style>

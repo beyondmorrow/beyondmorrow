@@ -47,9 +47,9 @@
 									{question.question}
 								</h5>
 								{#if isAnswerExpanded(question._uid)}
-									<p class="leading-8 text-gray-800 text-lg pb-5">
+									<div id="customRichText" class="leading-8 text-gray-800 text-lg pb-5">
 										{@html renderRichText(question.answer)}
-									</p>
+									</div>
 								{/if}
 							</div>
 							<div class="flex-shrink-0 w-1/4 lg:w-1/6 px-4 text-right">
@@ -81,3 +81,30 @@
 		</div>
 	</section>
 </div>
+
+<style>
+    #customRichText :global(h1) {
+        @apply text-5xl;
+        @apply my-5;
+    }
+    #customRichText :global(h2) {
+        @apply text-4xl;
+        @apply my-5;
+    }
+    #customRichText :global(h3) {
+        @apply text-3xl;
+        @apply my-5;
+    }
+    #customRichText :global(ul) {
+        @apply list-disc;
+    }
+    #customRichText :global(li) {
+        margin-left: 2rem;
+    }
+    #customRichText :global(p) {
+        @apply my-1;
+    }
+    #customRichText :global(a) {
+        @apply underline;
+    }
+</style>

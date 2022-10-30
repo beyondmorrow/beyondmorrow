@@ -80,7 +80,7 @@
 					{/if}
 				</div>
 				<div class="mt-5 text-center">
-					<Button link="/{offer.callToActionLink.cached_url}" text={offer.callToAction} />
+					<Button link="{offer.callToActionLink.cached_url}" text={offer.callToAction} />
 					<a class="ml-3 underline" href="{c.PATH_PRICES}">Zu den Preisen</a>
 				</div>
 			</div>
