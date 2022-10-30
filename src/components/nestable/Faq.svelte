@@ -73,7 +73,7 @@
 							<p class="italic">{blok.secondSubheading}</p>
 						</div>
 						<div class="w-full lg:w-2/6 px-4 text-center lg:text-right">
-							<Button link="/{blok.buttonLink.cached_url}" text={blok.buttonText} />
+							<Button link="{blok.buttonLink.cached_url}" text={blok.buttonText} />
 						</div>
 					</div>
 				</div>
