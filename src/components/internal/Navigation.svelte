@@ -178,7 +178,9 @@
 						{/each}
 					</ul>
 					<div class="mt-5">
-						<Button />
+						<div on:click={handleMobileNav}>
+							<Button />
+						</div>
 					</div>
 				</div>
 			</nav>
