@@ -1,11 +1,32 @@
 <script>
 	import * as c from '../../pathConst';
-	import { handleSubmit, displayErrorMessage, displaySuccessMessage } from '../../modules/newsletter';
+
+	let displayErrorMessage = false;
+	let displaySuccessMessage = false;
+
+	async function handleSubmit(event) {
+		const formData = new FormData(this);
+
+		const response = await fetch('/.netlify/functions/subscribe', {
+			method: 'POST',
+			body: JSON.stringify({
+				email: formData.get('email').toString()
+			})
+		});
+
+		if (response.status === 200) {
+			displaySuccessMessage = true;
+		} else {
+			displayErrorMessage = true;
+		}
+	}
 
 	export let blok;
 </script>
 
-<div class="flex flex-wrap items-center md:flex-nowrap bg-beyondrose-100 max-w-[50rem] mx-auto mb-24 py-14 px-5 md:px-20">
+<div
+	class="flex flex-wrap items-center md:flex-nowrap bg-beyondrose-100 max-w-[50rem] mx-auto mb-24 py-14 px-5 md:px-20"
+>
 	<div class="shrink-0 mx-auto mb-8 md:mb-0">
 		<div class="flex md:flex-col justify-center items-center md:pr-20 gap-5">
 			<a href="https://www.instagram.com/beyondmorrow_yoga/" target="blank">

@@ -1,6 +1,25 @@
 <script>
-	import * as c from '../../pathConst'
-	import { handleSubmit, displayErrorMessage, displaySuccessMessage } from '../../modules/newsletter';
+	import * as c from '../../pathConst';
+
+	let displayErrorMessage = false;
+	let displaySuccessMessage = false;
+
+	async function handleSubmit(event) {
+		const formData = new FormData(this);
+
+		const response = await fetch('/.netlify/functions/subscribe', {
+			method: 'POST',
+			body: JSON.stringify({
+				email: formData.get('email').toString()
+			})
+		});
+
+		if (response.status === 200) {
+			displaySuccessMessage = true;
+		} else {
+			displayErrorMessage = true;
+		}
+	}
 </script>
 
 <div class="text-white w-full max-w-sm md:w-1/2 lg:w-1/4 mx-auto text-center lg:mx-0 lg:text-left">
@@ -35,7 +54,7 @@
 			</div>
 			<p class="mt-2 text-xs">
 				Mit dem Klick auf 'Anmelden' stimmst du zu, dass ich deine Informationen im Rahmen meiner
-				<a href="{c.PATH_PRIVACY}">Datenschutzerklärung</a> verarbeite.
+				<a href={c.PATH_PRIVACY}>Datenschutzerklärung</a> verarbeite.
 			</p>
 		</form>
 	{/if}
