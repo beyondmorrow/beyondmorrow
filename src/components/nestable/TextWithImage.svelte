@@ -6,7 +6,7 @@
     const imagePositionRight = (blok.imagePosition === 'right') ? true : false;
 </script>
 
-<div class="flex flex-wrap items-center mb-7">
+<div class="flex flex-wrap items-center mb-24">
     <div class="lg:w-2/3 lg:px-3">
         <RichText {blok} />
     </div>

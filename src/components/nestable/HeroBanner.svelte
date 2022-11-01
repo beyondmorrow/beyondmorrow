@@ -12,7 +12,7 @@
 	class:w-full={isFullWidth}
 	class:container={!isFullWidth}
 	class:mx-auto={!isFullWidth}
-	class="h-[40rem] bg-no-repeat bg-cover bg-right-top md:bg-top md:h-[46rem] mb-24"
+	class="h-[40rem] bg-no-repeat bg-cover bg-right-top md:bg-top md:h-[46rem] mb-24 pt-16"
     style="background-image: url({backgroundImageUrl});"
 >
 	<div class="mx-auto pt-10 px-5 text-center">

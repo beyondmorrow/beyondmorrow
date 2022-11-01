@@ -27,7 +27,7 @@
 </script>
 
 <div use:storyblokEditable={blok}>
-	<section class="bg-beyondrose-100 pb-20">
+	<section class="bg-beyondrose-100 pt-10 pb-20">
 		<div class="container px-4 mx-auto">
 			<Heading {blok} />
 			<div class="flex flex-wrap items-stretch -mx-4 -mb-8 pl-5 pr-5">
@@ -55,7 +55,7 @@
 	</section>
 
 	{#if alternative() !== null}
-		<section class="container mx-auto text-center mt-16">
+		<section class="container mx-auto text-center mt-24">
 			<p class="font-spectral italic text-3xl">
 				{alternative().text}<a href={alternative().href}><b>{alternative().linkText}</b></a>.
 			</p>

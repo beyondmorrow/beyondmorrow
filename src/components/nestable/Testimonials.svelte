@@ -37,7 +37,7 @@
 	}
 </script>
 
-<div class="mx-auto mb-16">
+<div class="mx-auto mb-24">
     <!-- Testimonial -->
 	<div class="mx-auto flex justify-center items-center mb-8 max-w-2xl md:h-48">
 		<div class="text-center text-lg">{currentTestimonial.testimonial}</div>

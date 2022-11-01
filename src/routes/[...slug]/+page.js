@@ -18,6 +18,7 @@ import TextWithImage from '../../components/nestable/TextWithImage.svelte';
 import HeroBanner from '../../components/nestable/HeroBanner.svelte';
 import RevokeConsent from '../../components/nestable/RevokeConsent.svelte';
 import Testimonials from '../../components/nestable/Testimonials.svelte';
+import CallToAction from '../../components/nestable/CallToAction.svelte';
 
 /**
  * Init Storyblok
@@ -44,6 +45,7 @@ storyblokInit({
     heroBanner: HeroBanner,
     revokeConsent: RevokeConsent,
     testimonials: Testimonials,
+    callToAction: CallToAction,
   },
 });
 

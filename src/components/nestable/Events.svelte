@@ -30,7 +30,7 @@
 	});
 </script>
 
-<div>
+<div class="mb-24">
 	{#await promise}
 		<LoadingSpinner />
 	{:then response}

@@ -8,8 +8,8 @@
 	}
 </script>
 
-<div use:storyblokEditable={blok} class="w-full pt-20 pb-5 text-center">
-	<div class="max-w-2xl mx-auto mb-16">
+<div use:storyblokEditable={blok} class="w-full pb-5 mb-20 pt-10 text-center">
+	<div class="max-w-2xl mx-auto">
 		{#if blok.size === 'h1'}
 			<h1 class="font-spectral text-5xl text-beyondpurple-900">{blok.heading}</h1>
 		{:else if blok.size === 'h2'}
