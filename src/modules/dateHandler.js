@@ -38,7 +38,7 @@ function getFormattedDate(event, longFormat=false) {
 }
 
 function isPastEvent(event) {
-    const startingDate = new Date(event.startingDate);
+    const startingDate = new Date(event.startingDate.replace(' ','T'));
     if (startingDate < (new Date())) {
         return true;
     } else {

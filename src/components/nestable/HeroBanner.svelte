@@ -18,5 +18,5 @@
 	<div class="mx-auto pt-10 px-5 text-center">
         <Heading  {blok}/>
         <Button link="{blok.ctaLink.cached_url}" text="{blok.cta}" />
-    </div>>
+    </div>
 </div>
