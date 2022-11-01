@@ -27,7 +27,7 @@
 </script>
 
 <div use:storyblokEditable={blok}>
-	<section class="bg-beyondrose-100 pt-10 pb-20">
+	<section class="bg-beyondrose-100 pb-20">
 		<div class="container px-4 mx-auto">
 			<Heading {blok} />
 			<div class="flex flex-wrap items-stretch -mx-4 -mb-8 pl-5 pr-5">

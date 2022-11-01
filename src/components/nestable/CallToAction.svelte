@@ -9,9 +9,9 @@
 
 </script>
 
-<div class="bg-beyondrose-100 max-w-[50rem] mx-auto pb-16 pt-6 mb-24">
+<div class="bg-beyondrose-100 max-w-[50rem] mx-auto py-16 mb-24">
     <Heading {blok} />
-    <div class="mx-auto text-center -mt-16">
+    <div class="mx-auto text-center -mt-16 px-3">
         <p class="mb-4">{blok.text}</p>
         <Button link="{blok.buttonLink.cached_url}" text="{blok.buttonText}"/>
     </div>
