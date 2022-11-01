@@ -8,10 +8,10 @@
 <div class="flex flex-wrap items-center md:flex-nowrap bg-beyondrose-100 max-w-[50rem] mx-auto mb-24 py-14 px-5 md:px-20">
 	<div class="shrink-0 mx-auto mb-8 md:mb-0">
 		<div class="flex md:flex-col justify-center items-center md:pr-20 gap-5">
-			<a href="https://www.instagram.com/beyondmorrow_yoga/">
+			<a href="https://www.instagram.com/beyondmorrow_yoga/" target="blank">
 				<img class="w-14" src="/icons/instagram.svg" alt="" />
 			</a>
-			<a href="https://www.facebook.com/beyondmorrow">
+			<a href="https://www.facebook.com/beyondmorrow" target="blank">
 				<img class="w-14" src="/icons/facebook.svg" alt="" />
 			</a>
 		</div>
@@ -35,7 +35,7 @@
 				>
 			</div>
 		{:else}
-			<form name="newsletter" method="POST" on:submit|preventDefault={handleSubmit}>
+			<form name="newsletterModule" method="POST" on:submit|preventDefault={handleSubmit}>
 				<div class="flex items-center p-2 bg-white">
 					<input
 						class="pr-2 bg-transparent text-black outline-none min-w-0"

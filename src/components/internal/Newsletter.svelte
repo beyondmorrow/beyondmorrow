@@ -18,7 +18,7 @@
 			>
 		</div>
 	{:else}
-		<form name="newsletter" method="POST" on:submit|preventDefault={handleSubmit}>
+		<form name="newsletterFooter" method="POST" on:submit|preventDefault={handleSubmit}>
 			<div class="flex items-center pl-2 pr-2 py-2 bg-white">
 				<input
 					class="xl:w-4/6 pr-2 bg-transparent text-black outline-none min-w-0"

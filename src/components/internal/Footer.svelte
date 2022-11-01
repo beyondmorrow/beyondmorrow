@@ -49,10 +49,10 @@
 					</a>
 					<p class="leading-8 mb-6 text-white">We're all just walking each other home.</p>
 					<div class="flex items-center justify-center">
-						<a class="inline-block mr-4 invert" href="https://www.instagram.com/beyondmorrow_yoga/">
+						<a class="inline-block mr-4 invert" href="https://www.instagram.com/beyondmorrow_yoga/" target="blank">
 							<img src="/icons/instagram.svg" alt="" />
 						</a>
-						<a class="inline-block invert" href="https://www.facebook.com/beyondmorrow">
+						<a class="inline-block invert" href="https://www.facebook.com/beyondmorrow" target="blank">
 							<img src="/icons/facebook.svg" alt="" />
 						</a>
 					</div>
