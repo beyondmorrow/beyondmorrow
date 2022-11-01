@@ -5,8 +5,6 @@
     export let blok;
 
     blok.size = 'h2';
-
-
 </script>
 
 <div class="bg-beyondrose-100 max-w-[50rem] mx-auto py-16 mb-24">
