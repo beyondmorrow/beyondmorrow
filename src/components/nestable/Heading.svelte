@@ -13,7 +13,7 @@
 	}
 </script>
 
-<div use:storyblokEditable={blok} class="w-full pb-5 mb-20 text-center" class:pt-16={paddingTop}>
+<div use:storyblokEditable={blok} class="w-full pb-5 mb-14 text-center" class:pt-16={paddingTop}>
 	<div class="max-w-2xl mx-auto">
 		{#if blok.size === 'h1'}
 			<h1 class="font-spectral text-5xl text-beyondpurple-900">{blok.heading}</h1>
