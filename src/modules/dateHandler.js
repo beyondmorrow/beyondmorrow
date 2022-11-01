@@ -1,7 +1,7 @@
 function getFormattedDate(event, longFormat=false) {
-    const startingDate = new Date(event.startingDate);
+    const startingDate = new Date(event.startingDate.replace(' ','T'));
     const endDate =
-        event.hasOwnProperty('endDate') && event.endDate.length > 0 ? new Date(event.endDate) : null;
+        event.hasOwnProperty('endDate') && event.endDate.length > 0 ? new Date(event.endDate.replace(' ','T')) : null;
 
     const startingDateLocaleString = startingDate.toLocaleString('de-AT', {
         timeStyle: 'short',
