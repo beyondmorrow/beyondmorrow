@@ -20,6 +20,7 @@ import RevokeConsent from '../../components/nestable/RevokeConsent.svelte';
 import Testimonials from '../../components/nestable/Testimonials.svelte';
 import CallToAction from '../../components/nestable/CallToAction.svelte';
 import SocialMediaNewsletter from '../../components/nestable/SocialMediaNewsletter.svelte';
+import Location from '../../components/nestable/Location.svelte';
 
 /**
  * Init Storyblok
@@ -48,6 +49,7 @@ storyblokInit({
     testimonials: Testimonials,
     callToAction: CallToAction,
     socialMediaAndNewsletter: SocialMediaNewsletter,
+    location: Location,
   },
 });
 
