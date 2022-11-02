@@ -11,9 +11,11 @@
 	if (blok.size === 'h1') {
 		paddingTop = true;
 	}
+
+	const noBottomMargin = Boolean(blok.noBottomMargin);
 </script>
 
-<div use:storyblokEditable={blok} class="w-full pb-5 mb-14 text-center" class:pt-16={paddingTop}>
+<div use:storyblokEditable={blok} class="w-full pb-5 text-center" class:pt-16={paddingTop} class:mb-14={!noBottomMargin}>
 	<div class="max-w-2xl mx-auto">
 		{#if blok.size === 'h1'}
 			<h1 class="font-spectral text-5xl text-beyondpurple-900">{blok.heading}</h1>

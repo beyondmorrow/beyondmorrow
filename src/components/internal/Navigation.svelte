@@ -47,12 +47,12 @@
 					link: c.PATH_PRICES
 				},
 				{
-					name: 'Etiquette',
-					link: c.PATH_ETIQUETTE
-				},
-				{
 					name: 'Lehrerinnen',
 					link: c.PATH_TEAM
+				},
+				{
+					name: 'Etiquette',
+					link: c.PATH_ETIQUETTE
 				}
 			]
 		},
