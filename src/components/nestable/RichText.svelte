@@ -12,14 +12,17 @@
     #customRichText :global(h1) {
         @apply text-5xl;
         @apply my-5;
+        @apply font-spectral;
     }
     #customRichText :global(h2) {
         @apply text-4xl;
         @apply my-5;
+        @apply font-spectral;
     }
     #customRichText :global(h3) {
         @apply text-3xl;
         @apply my-5;
+        @apply font-spectral;
     }
     #customRichText :global(ul) {
         @apply list-disc;
