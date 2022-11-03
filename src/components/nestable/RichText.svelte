@@ -1,10 +1,12 @@
 <script>
-    import { renderRichText } from '@storyblok/svelte'
+    import { renderRichText } from '@storyblok/svelte';
 
     export let blok;
+
+    const textCenter = Boolean(blok.textCenter);
 </script>
 
-<div id="customRichText" class="container px-4 mx-auto">
+<div id="customRichText" class="container px-4 mx-auto" class:text-center={textCenter}>
     {@html renderRichText(blok.text)}
 </div>
 
