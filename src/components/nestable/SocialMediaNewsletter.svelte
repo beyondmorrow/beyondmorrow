@@ -30,10 +30,10 @@
 	<div class="shrink-0 mx-auto mb-8 md:mb-0">
 		<div class="flex md:flex-col justify-center items-center md:pr-20 gap-5">
 			<a href="https://www.instagram.com/beyondmorrow_yoga/" target="blank">
-				<img class="w-14" src="/icons/instagram.svg" alt="" />
+				<img class="w-10" src="/icons/instagram.svg" alt="" />
 			</a>
 			<a href="https://www.facebook.com/beyondmorrow" target="blank">
-				<img class="w-14" src="/icons/facebook.svg" alt="" />
+				<img class="w-10" src="/icons/facebook.svg" alt="" />
 			</a>
 		</div>
 	</div>
