@@ -26,6 +26,9 @@
 			})
 		});
 
+		console.log(formData.get('subscribeNewsletter').toString());
+		console.log(formData.get('subscribeNewsletter').checked.toString());
+
 		// Subscribe to newsletter if checked
 		if (formData.get('subscribeNewsletter').checked === true) {
 			const responseNewsletter = await fetch('/.netlify/functions/subscribe', {
