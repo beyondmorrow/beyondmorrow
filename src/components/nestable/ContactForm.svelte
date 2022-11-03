@@ -27,7 +27,7 @@
 		});
 
 		console.log(formData.get('subscribeNewsletter').toString());
-		console.log(formData.get('subscribeNewsletter').checked.toString());
+		console.log(formData.get('subscribeNewsletter').checked);
 
 		// Subscribe to newsletter if checked
 		if (formData.get('subscribeNewsletter').checked === true) {
