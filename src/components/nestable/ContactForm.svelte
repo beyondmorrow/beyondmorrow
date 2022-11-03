@@ -1,5 +1,6 @@
 <script>
 	import { renderRichText } from '@storyblok/svelte';
+	import * as c from '../../pathConst.js';
 
 	export let blok;
 
@@ -14,6 +15,7 @@
 	export async function handleSubmit(event) {
 		const formData = new FormData(this);
 
+		// Send contact form
 		const response = await fetch('/.netlify/functions/contactForm', {
 			method: 'POST',
 			body: JSON.stringify({
@@ -24,10 +26,26 @@
 			})
 		});
 
-		if (response.status === 200) {
-			displaySuccessMessage = true;
+		// Subscribe to newsletter if checked
+		if (formData.get('subscribeNewsletter').checked === true) {
+			const responseNewsletter = await fetch('/.netlify/functions/subscribe', {
+				method: 'POST',
+				body: JSON.stringify({
+					email: formData.get('email').toString()
+				})
+			});
+
+			if (response.status === 200 && responseNewsletter.status === 200) {
+				displaySuccessMessage = true;
+			} else {
+				displayErrorMessage = true;
+			}
 		} else {
-			displayErrorMessage = true;
+			if (response.status === 200) {
+				displaySuccessMessage = true;
+			} else {
+				displayErrorMessage = true;
+			}
 		}
 	}
 </script>
@@ -114,7 +132,15 @@
 								rows="10"
 								placeholder="Deine Nachricht"
 							/>
-							<input type="hidden" name="contact" value="contact" />
+							<div>
+								<input name="subscribeNewsletter" id="subscribeNewsletter" type="checkbox" />
+								<label for="subscribeNewsletter">Zum Newsletter anmelden</label>
+							</div>
+							<div class="my-2 text-xs text-gray-500">
+								Mit dem Klick auf 'Absenden' stimmst du zu, dass ich deine Informationen im Rahmen
+								meiner
+								<a href={c.PATH_PRIVACY} target="blank">Datenschutzerklärung</a> verarbeite.
+							</div>
 							<button
 								type="submit"
 								class="rounded-sm drop-shadow-md inline-block w-full md:w-auto py-3 px-8 text-center text-white font-bold bg-beyondpurple-900 hover:bg-beyondpurple-800 transition duration-200"
