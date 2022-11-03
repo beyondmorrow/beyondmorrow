@@ -136,17 +136,17 @@
 								<input name="subscribeNewsletter" id="subscribeNewsletter" type="checkbox" />
 								<label for="subscribeNewsletter">Zum Newsletter anmelden</label>
 							</div>
-							<div class="my-2 text-xs text-gray-500">
+							<button
+								type="submit"
+								class="rounded-sm drop-shadow-md inline-block w-full md:w-auto py-3 px-8 mt-3 text-center text-white font-bold bg-beyondpurple-900 hover:bg-beyondpurple-800 transition duration-200"
+							>
+								Absenden
+							</button>
+							<div class="mt-2 text-xs text-gray-500">
 								Mit dem Klick auf 'Absenden' stimmst du zu, dass ich deine Informationen im Rahmen
 								meiner
 								<a href={c.PATH_PRIVACY} target="blank">Datenschutzerklärung</a> verarbeite.
 							</div>
-							<button
-								type="submit"
-								class="rounded-sm drop-shadow-md inline-block w-full md:w-auto py-3 px-8 text-center text-white font-bold bg-beyondpurple-900 hover:bg-beyondpurple-800 transition duration-200"
-							>
-								Absenden
-							</button>
 						</form>
 					{/if}
 				</div>
