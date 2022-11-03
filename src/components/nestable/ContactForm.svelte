@@ -26,11 +26,8 @@
 			})
 		});
 
-		console.log(formData.get('subscribeNewsletter').toString());
-		console.log(formData.get('subscribeNewsletter').checked);
-
 		// Subscribe to newsletter if checked
-		if (formData.get('subscribeNewsletter').checked === true) {
+		if (formData.has('subscribeNewsletter')) {
 			const responseNewsletter = await fetch('/.netlify/functions/subscribe', {
 				method: 'POST',
 				body: JSON.stringify({
