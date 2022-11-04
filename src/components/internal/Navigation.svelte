@@ -78,6 +78,11 @@
 	];
 </script>
 
+<svelte:head>
+	<link rel="preload" as="arrow-down" href="/icons/arrow-down.svg" />
+	<link rel="preload" as="arrow-up" href="/icons/arrow-up.svg" />
+</svelte:head>
+
 <section>
 	<nav class="py-10" data-config-="">
 		<div class="container px-4 mx-auto">
