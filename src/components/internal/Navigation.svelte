@@ -150,7 +150,7 @@
 		<div
 			in:scale
 			out:fade
-			class="absolute top-0 left-0 bottom-0 w-full h-full z-50 bg-white"
+			class="fixed top-0 left-0 bottom-0 w-full h-full z-50 bg-white"
 			data-config-=""
 		>
 			<nav class="flex flex-col p-8 ">
@@ -167,7 +167,7 @@
 						<img src="/icons/close-button.svg" alt="X" class="w-7" />
 					</button>
 				</div>
-				<div class="text-center overflow-y-scroll">
+				<div class="text-center">
 					<ul>
 						{#each navEntries as entry}
 							<li class="py-3">
@@ -176,7 +176,7 @@
 										<a
 											on:click={handleMobileNav}
 											class:text-beyondgrey={$page.url.pathname === entry.link}
-											class="inline-block hover:text-gray-900 text-xl pl-3"
+											class="inline-block hover:text-gray-900 text-xl pl-3.5"
 											href={entry.link}>{entry.name}</a
 										>
 										{#if expandedSubmenu}
