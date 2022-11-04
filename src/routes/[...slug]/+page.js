@@ -21,6 +21,7 @@ import Testimonials from '../../components/nestable/Testimonials.svelte';
 import CallToAction from '../../components/nestable/CallToAction.svelte';
 import SocialMediaNewsletter from '../../components/nestable/SocialMediaNewsletter.svelte';
 import Location from '../../components/nestable/Location.svelte';
+import Prices from '../../components/nestable/Prices.svelte';
 
 /**
  * Init Storyblok
@@ -50,6 +51,7 @@ storyblokInit({
     callToAction: CallToAction,
     socialMediaAndNewsletter: SocialMediaNewsletter,
     location: Location,
+    prices: Prices,
   },
 });
 

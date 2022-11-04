@@ -3,7 +3,7 @@
 
     export let link = c.PATH_TIMETABLE;
     export let text = "Buchen";
-    export let target = "self";
+    export let target = "_self";
 </script>
 
 <button>
