@@ -53,10 +53,12 @@
 							/>
 						</div>
 						<div class="p-5 text-center">
-							<h3 class="font-spectral text-xl font-semibold italic text-beyondpurple-900">
-								{event.content.body[0].heading}
-							</h3>
-							<h4 class="font-spectral text-md">{event.content.body[0].subheading}</h4>
+							<div class="min-h-[80px]">
+								<h3 class="font-spectral text-xl font-semibold italic text-beyondpurple-900">
+									{event.content.body[0].heading}
+								</h3>
+								<h4 class="font-spectral text-md">{event.content.body[0].subheading}</h4>
+							</div>
 							<div class="flex items-center my-3">
 								<div class="flex-grow h-px bg-slate-300" />
 								<span class="flex-shrink text-2xl text-beyondgrey px-3 pb-1"
