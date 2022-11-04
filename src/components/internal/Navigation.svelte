@@ -32,8 +32,6 @@
 		displayDropdown = false;
 	}
 
-
-
 	const navEntries = [
 		{
 			name: 'Über mich',
@@ -187,19 +185,11 @@
 										>
 										{#if expandedSubmenu}
 											<button on:click={handleMobileSubmenu} class="px-4 py-3">
-												<img
-													class="w-4 mt-0.5"
-													src="/icons/arrow-up.svg"
-													alt="arrow down"
-												/>
+												<img class="w-4 mt-0.5" src="/icons/arrow-up.svg" alt="arrow down" />
 											</button>
 										{:else}
 											<button on:click={handleMobileSubmenu} class="px-4 py-3">
-												<img
-													class="w-4 mt-0.5"
-													src="/icons/arrow-down.svg"
-													alt="arrow down"
-												/>
+												<img class="w-4 mt-0.5" src="/icons/arrow-down.svg" alt="arrow down" />
 											</button>
 										{/if}
 									</div>
@@ -216,8 +206,9 @@
 										<div class="">
 											<ul>
 												{#each entry.submenu as subEntry}
-													<li on:click={handleMobileNav} class="py-1.5">
+													<li class="py-1.5">
 														<a
+															on:click={handleMobileNav}
 															class:text-beyondgrey={$page.url.pathname === subEntry.link}
 															class="inline-block hover:text-gray-900 text-base"
 															href={subEntry.link}>{subEntry.name}</a
