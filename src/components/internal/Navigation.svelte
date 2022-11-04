@@ -150,7 +150,7 @@
 		<div
 			in:scale
 			out:fade
-			class="fixed top-0 left-0 bottom-0 w-full h-full z-50 bg-white"
+			class="fixed top-0 left-0 bottom-0 w-full h-full z-50 bg-white overscroll-contain"
 			data-config-=""
 		>
 			<nav class="flex flex-col p-8 ">
