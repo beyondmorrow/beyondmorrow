@@ -180,7 +180,7 @@
 											href={entry.link}>{entry.name}</a
 										>
 										{#if expandedSubmenu}
-											<button on:click={handleMobileSubmenu} class="px-3 py-3">
+											<button on:click={handleMobileSubmenu} class="px-4 py-3">
 												<img
 													class="w-4 mt-0.5"
 													src="/icons/arrow-up.svg"
@@ -188,7 +188,7 @@
 												/>
 											</button>
 										{:else}
-											<button on:click={handleMobileSubmenu} class="px-3 py-3">
+											<button on:click={handleMobileSubmenu} class="px-4 py-3">
 												<img
 													class="w-4 mt-0.5"
 													src="/icons/arrow-down.svg"
