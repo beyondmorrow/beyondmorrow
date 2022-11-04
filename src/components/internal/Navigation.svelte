@@ -176,7 +176,7 @@
 										<a
 											on:click={handleMobileNav}
 											class:text-beyondgrey={$page.url.pathname === entry.link}
-											class="inline-block hover:text-gray-900 text-xl"
+											class="inline-block hover:text-gray-900 text-xl pl-2"
 											href={entry.link}>{entry.name}</a
 										>
 										{#if expandedSubmenu}
