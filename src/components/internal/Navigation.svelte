@@ -157,7 +157,7 @@
 		<div
 			in:scale
 			out:fade
-			class="fixed top-0 left-0 w-screen h-screen z-999 bg-white overflow-scroll"
+			class="fixed top-0 left-0 w-screen h-screen z-50 bg-white overflow-scroll"
 		>
 			<nav class="flex flex-col p-8 ">
 				<div class="flex items-center justify-between mb-12">
