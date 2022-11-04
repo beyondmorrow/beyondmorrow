@@ -4,11 +4,19 @@
 	import Button from './Button.svelte';
 	import * as c from '../../pathConst';
 
+	// Mobile menu
 	let displayMobileNav = false;
 	function handleMobileNav() {
 		displayMobileNav = !displayMobileNav;
+		expandedSubmenu = false;
 	}
 
+	let expandedSubmenu = false;
+	function handleMobileSubmenu() {
+		expandedSubmenu = !expandedSubmenu;
+	}
+
+	// Desktop menu
 	let displayDropdown = false;
 	function showDropdown() {
 		displayDropdown = true;
@@ -16,6 +24,8 @@
 	function hideDropdown() {
 		displayDropdown = false;
 	}
+
+
 
 	const navEntries = [
 		{
@@ -137,8 +147,13 @@
 
 	<!-- MOBILE NAV -->
 	{#if displayMobileNav}
-		<div in:scale out:fade class="fixed top-0 left-0 bottom-0 w-full z-50" data-config-="">
-			<nav class="relative flex flex-col h-full p-8 bg-white">
+		<div
+			in:scale
+			out:fade
+			class="fixed top-0 left-0 bottom-0 w-full z-50 overflow-y-scroll"
+			data-config-=""
+		>
+			<nav class="flex flex-col h-full p-8 bg-white">
 				<div class="flex items-center justify-between mb-12">
 					<a on:click={handleMobileNav} class="items-center" href="/">
 						<img src="/logo/logo-image.png" alt="logo" class="w-14" />
@@ -155,26 +170,59 @@
 				<div class="text-center">
 					<ul>
 						{#each navEntries as entry}
-							<li on:click={handleMobileNav} class="py-3">
-								<a
-									class:text-beyondgrey={$page.url.pathname === entry.link}
-									class="inline-block hover:text-gray-900"
-									href={entry.link}>{entry.name}</a
-								>
+							<li class="py-3">
+								{#if entry.hasOwnProperty('submenu')}
+									<div class="flex justify-center items-center">
+										<a
+											on:click={handleMobileNav}
+											class:text-beyondgrey={$page.url.pathname === entry.link}
+											class="inline-block hover:text-gray-900 text-xl"
+											href={entry.link}>{entry.name}</a
+										>
+										{#if expandedSubmenu}
+											<button on:click={handleMobileSubmenu} class="px-3 py-3">
+												<img
+													class="w-4 mt-0.5"
+													src="/icons/arrow-up.svg"
+													alt="arrow down"
+												/>
+											</button>
+										{:else}
+											<button on:click={handleMobileSubmenu} class="px-3 py-3">
+												<img
+													class="w-4 mt-0.5"
+													src="/icons/arrow-down.svg"
+													alt="arrow down"
+												/>
+											</button>
+										{/if}
+									</div>
+								{:else}
+									<a
+										on:click={handleMobileNav}
+										class:text-beyondgrey={$page.url.pathname === entry.link}
+										class="inline-block hover:text-gray-900 text-xl"
+										href={entry.link}>{entry.name}</a
+									>
+								{/if}
+								{#if entry.hasOwnProperty('submenu')}
+									{#if expandedSubmenu}
+										<div class="">
+											<ul>
+												{#each entry.submenu as subEntry}
+													<li on:click={handleMobileNav} class="py-1.5">
+														<a
+															class:text-beyondgrey={$page.url.pathname === subEntry.link}
+															class="inline-block hover:text-gray-900 text-base"
+															href={subEntry.link}>{subEntry.name}</a
+														>
+													</li>
+												{/each}
+											</ul>
+										</div>
+									{/if}
+								{/if}
 							</li>
-							{#if entry.hasOwnProperty('submenu')}
-								<ul>
-									{#each entry.submenu as subEntry}
-										<li on:click={handleMobileNav} class="py-3">
-											<a
-												class:text-beyondgrey={$page.url.pathname === subEntry.link}
-												class="inline-block hover:text-gray-900"
-												href={subEntry.link}>{subEntry.name}</a
-											>
-										</li>
-									{/each}
-								</ul>
-							{/if}
 						{/each}
 					</ul>
 					<div class="mt-5">
