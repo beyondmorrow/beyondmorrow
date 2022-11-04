@@ -8,7 +8,9 @@
 	let displayMobileNav = false;
 	function handleMobileNav() {
 		displayMobileNav = !displayMobileNav;
+
 		expandedSubmenu = false;
+
 		if (displayMobileNav) {
 			document.body.style.position = 'fixed';
 		} else {
@@ -155,7 +157,7 @@
 		<div
 			in:scale
 			out:fade
-			class="fixed top-0 left-0 w-screen h-screen z-999 bg-white overscroll-contain"
+			class="fixed top-0 left-0 w-screen h-screen z-999 bg-white overflow-scroll"
 		>
 			<nav class="flex flex-col p-8 ">
 				<div class="flex items-center justify-between mb-12">
