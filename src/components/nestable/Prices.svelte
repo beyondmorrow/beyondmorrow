@@ -14,7 +14,7 @@
 					class:to-beyondrose-900={Boolean(price.highlight)}
 				>
 					<div class="p-6 border-b border-gray-200 text-center">
-						<p class="font-spectral uppercase mb-1 text-xl">
+						<p class="font-spectral mb-1 text-xl">
 							<strong>{price.title}</strong>
 						</p>
 						<p class="mb-4 text-md">
