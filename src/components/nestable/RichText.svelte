@@ -6,7 +6,7 @@
     const textCenter = Boolean(blok.textCenter);
 </script>
 
-<div id="customRichText" class="container px-4 mx-auto" class:text-center={textCenter}>
+<div id="customRichText" class="container px-4 mx-auto mb-24" class:text-center={textCenter}>
     {@html renderRichText(blok.text)}
 </div>
 

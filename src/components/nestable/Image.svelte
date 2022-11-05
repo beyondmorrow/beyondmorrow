@@ -4,9 +4,9 @@
 	export let blok;
 </script>
 
-<div use:storyblokEditable={blok} class="w- p-12 rounded-[5px] text-center">
+<div use:storyblokEditable={blok} class="p-12 rounded-[5px] text-center">
 	<img
-	class="block {blok.Width} mb-12 mx-auto"
+	class="block {blok.Width} mb-24 mx-auto"
 	src="{blok.Image.filename}"
 	alt="{blok.Image.alt}"
 />
