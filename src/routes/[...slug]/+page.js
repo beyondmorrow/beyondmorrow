@@ -23,6 +23,7 @@ import SocialMediaNewsletter from '../../components/nestable/SocialMediaNewslett
 import Location from '../../components/nestable/Location.svelte';
 import Prices from '../../components/nestable/Prices.svelte';
 import Button from '../../components/nestable/Button.svelte';
+import Divider from '../../components/nestable/Divider.svelte';
 
 /**
  * Init Storyblok
@@ -54,6 +55,7 @@ storyblokInit({
     location: Location,
     prices: Prices,
     button: Button,
+    divider: Divider,
   },
 });
 
