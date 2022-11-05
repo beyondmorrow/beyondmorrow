@@ -15,16 +15,24 @@
         @apply text-5xl;
         @apply my-5;
         @apply font-spectral;
+        @apply text-beyondpurple-900;
     }
     #customRichText :global(h2) {
         @apply text-4xl;
         @apply my-5;
         @apply font-spectral;
+        @apply text-beyondpurple-900;
     }
     #customRichText :global(h3) {
         @apply text-3xl;
         @apply my-5;
         @apply font-spectral;
+        @apply text-beyondpurple-900;
+    }
+    #customRichText :global(h4) {
+        @apply text-3xl;
+        @apply my-5;
+        @apply font-northwell;
     }
     #customRichText :global(ul) {
         @apply list-disc;
