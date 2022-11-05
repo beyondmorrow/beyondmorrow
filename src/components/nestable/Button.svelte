@@ -10,7 +10,6 @@
     if (blok) {
         link = '/' + blok.link;
         text = blok.text;
-        text = blok.target;
     }
 </script>
 
