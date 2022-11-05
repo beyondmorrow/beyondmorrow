@@ -149,7 +149,7 @@
 					</ul>
 				</div>
 				<div class="hidden xl:block ml-14">
-					<Button />
+					<Button text="FAQ" link="{c.PATH_FAQ}"/>
 				</div>
 			</div>
 		</div>
@@ -229,7 +229,7 @@
 					</ul>
 					<div class="mt-5">
 						<div on:click={handleMobileNav}>
-							<Button />
+							<Button text="FAQ" link="{c.PATH_FAQ}"/>
 						</div>
 					</div>
 				</div>
