@@ -79,8 +79,8 @@
 </script>
 
 <svelte:head>
-	<link rel="preload" as="arrow-down" href="/icons/arrow-down.svg" />
-	<link rel="preload" as="arrow-up" href="/icons/arrow-up.svg" />
+	<link rel="preload" as="image" href="/icons/arrow-down.svg" />
+	<link rel="preload" as="image" href="/icons/arrow-up.svg" />
 </svelte:head>
 
 <section>
