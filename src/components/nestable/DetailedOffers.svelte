@@ -1,6 +1,6 @@
 <script>
 	import { storyblokEditable } from '@storyblok/svelte';
-	import Button from '../internal/Button.svelte';
+	import Button from './Button.svelte';
 	import * as c from '../../pathConst'
 
 	export let blok;

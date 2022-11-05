@@ -2,7 +2,7 @@
 	import Heading from './Heading.svelte';
 	import { getFormattedDate } from '../../modules/dateHandler';
 	import RichText from './RichText.svelte';
-	import Button from '../internal/Button.svelte';
+	import Button from '../nestable/Button.svelte';
 	import * as c from '../../pathConst'
 
 	export let blok;

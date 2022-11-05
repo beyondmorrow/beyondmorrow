@@ -1,6 +1,6 @@
 <script>
 	import Heading from "./Heading.svelte";
-    import Button from "../internal/Button.svelte";
+    import Button from "./Button.svelte";
 
     export let blok;
 

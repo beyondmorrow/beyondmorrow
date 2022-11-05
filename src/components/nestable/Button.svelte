@@ -1,9 +1,17 @@
 <script>
     import * as c from '../../pathConst';
 
+    export let blok;
+
     export let link = c.PATH_TIMETABLE;
     export let text = "Buchen";
     export let target = "_self";
+
+    if (blok) {
+        link = '/' + blok.link;
+        text = blok.text;
+        text = blok.target;
+    }
 </script>
 
 <button>

@@ -1,5 +1,5 @@
 <script>
-	import Button from "../internal/Button.svelte";
+	import Button from "../nestable/Button.svelte";
 
     export let blok;
 </script>
