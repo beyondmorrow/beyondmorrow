@@ -33,5 +33,5 @@
 	id="backToTopButton"
 	class="fixed bottom-3 right-3 md:bottom-6 md:right-6 w-10 h-10 md:w-16 md:h-16 bg-beyondpurple-800 hover:bg-beyondpurple-900 bg-opacity-25 hover:bg-opacity-30 z-10 hidden justify-center items-center rounded-sm shadow-md"
 >
-	<img src="/icons/arrow-up.svg" alt="arrow up" />
+	<img class="invert" src="/icons/arrow-up.svg" alt="arrow up" />
 </div>
