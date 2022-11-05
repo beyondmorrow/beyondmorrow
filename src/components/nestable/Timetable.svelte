@@ -10,17 +10,16 @@
 </script>
 
 {#if ready}
-	{#if $consent === String(true)}
-		<!-- Fitogram Booking Tool starts here -->
-		<iframe
-			title="fitogram"
-			frameborder="0"
-			src="https://widget.fitogram.pro/beyondmorrow-e-u?fito-embedded=true&w=/calendar"
-			width="100%"
-			height="1500px"
-		/>
-		<!-- Fitogram Booking Tool ends here -->
-	{:else}
+	<!-- {#if $consent === String(true)} -->
+	
+	<iframe
+		title="fitogram"
+		frameborder="0"
+		src="https://widget.fitogram.pro/beyondmorrow-e-u?fito-embedded=true&w=/calendar"
+		width="100%"
+	/>
+
+	<!-- {:else}
 		<div class="mx-auto text-center max-w-xl">
 			<p>
 				Diese Website verwendet Cookies, um ein besseres Nutzererlebnis zu gewährleisten. Damit der
@@ -40,5 +39,5 @@
 				>
 			</div>
 		</div>
-	{/if}
+	{/if} -->
 {/if}
