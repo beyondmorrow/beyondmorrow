@@ -21,7 +21,7 @@
 						<div class="w-full lg:w-2/3 px-4 mb-16 lg:mb-0">
 							<div class="text-left">
 								<h2
-									class="font-spectral text-4xl lg:text-5xl font-heading mb-9 text-beyondpurple-900"
+									class="font-spectral text-4xl lg:text-5xl font-heading my-5 text-beyondpurple-900"
 								>
 									{offer.heading}
 								</h2>
@@ -38,7 +38,7 @@
 								</ul>
 							</div>
 						</div>
-						<div class="w-full lg:w-1/3 px-4">
+						<div class="mx-auto w-full md:w-2/3 lg:w-1/3 px-4">
 							<div class="relative">
 								<img
 									class="block w-full relative"
@@ -48,7 +48,7 @@
 							</div>
 						</div>
 					{:else}
-						<div class="w-full lg:w-1/3 px-4">
+						<div class="mx-auto w-full md:w-2/3 lg:w-1/3 px-4">
 							<div class="relative">
 								<img
 									class="block w-full relative"
@@ -60,7 +60,7 @@
 						<div class="w-full lg:w-2/3 px-4 mb-16 lg:mb-0">
 							<div class="text-left">
 								<h2
-									class="font-spectral text-4xl lg:text-5xl font-heading mb-9 text-beyondpurple-900"
+									class="font-spectral text-4xl lg:text-5xl font-heading my-5 text-beyondpurple-900"
 								>
 									{offer.heading}
 								</h2>

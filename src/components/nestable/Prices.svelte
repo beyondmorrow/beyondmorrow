@@ -10,6 +10,7 @@
 				<div
 					class="block rounded-sm bg-gradient-to-t from-white shadow-md h-full"
                     class:to-beyondrose-100={!Boolean(price.highlight)}
+					class:via-beyondrose-100={Boolean(price.highlight)}
 					class:to-beyondrose-900={Boolean(price.highlight)}
 				>
 					<div class="p-6 border-b border-gray-200 text-center">
