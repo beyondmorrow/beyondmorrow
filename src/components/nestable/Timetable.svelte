@@ -17,6 +17,7 @@
 		frameborder="0"
 		src="https://widget.fitogram.pro/beyondmorrow-e-u?fito-embedded=true&w=/calendar"
 		width="100%"
+		height="1000px"
 	/>
 
 	<!-- {:else}
