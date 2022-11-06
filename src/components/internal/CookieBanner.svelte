@@ -14,7 +14,7 @@
 {#if ready && $consent !== String(true) && $consent !== String(false)}
 	<div
 		transition:fly={{ y: 200, duration: 2500 }}
-		class="max-w-screen-lg mx-auto fixed bg-beyondrose-100 inset-x-5 p-5 bottom-8 rounded-lg flex gap-4 flex-wrap md:flex-nowrap text-center md:text-left items-center justify-center md:justify-between shadow-2xl shadow-slate-900"
+		class="max-w-screen-lg mx-auto fixed bg-beyondrose-500 inset-x-5 p-5 bottom-8 rounded-lg flex gap-4 flex-wrap md:flex-nowrap text-center md:text-left items-center justify-center md:justify-between shadow-2xl shadow-slate-900"
 	>
 		<div class="w-full">
 			Diese Website verwendet Cookies, um ein besseres Nutzererlebnis zu gewährleisten.
