@@ -46,11 +46,13 @@
 						class:opacity-30={isPastEvent(event.content.body[0])}
 					>
 						<div class="w-full h-48 relative overflow-hidden">
-							<img
-								class="absolute block top-0 left-0"
-								src={event.content.body[0].image.filename}
-								alt={event.content.body[0].image.alt}
-							/>
+							<a href="/{event.full_slug}">
+								<img
+									class="absolute block top-0 left-0"
+									src={event.content.body[0].image.filename}
+									alt={event.content.body[0].image.alt}
+								/>
+							</a>
 						</div>
 						<div class="p-5 text-center">
 							<div class="min-h-[80px]">
@@ -80,7 +82,10 @@
 			</div>
 		{:else}
 			<div class="h-32 max-w-sm text-lg text-center mx-auto">
-				<p>Aktuell sind keine Events geplant. Melde dich zum Newsletter an, um bei zukünftigen Events informiert zu werden.</p>
+				<p>
+					Aktuell sind keine Events geplant. Melde dich zum Newsletter an, um bei zukünftigen Events
+					informiert zu werden.
+				</p>
 			</div>
 		{/if}
 	{:catch error}
