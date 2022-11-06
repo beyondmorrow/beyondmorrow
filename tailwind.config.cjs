@@ -10,6 +10,7 @@ const config = {
 				},
 				beyondrose: {
 					100: '#f9f1ec',
+					500: '#ecd4c5',
 					900: '#d8a588'
 				},
 				beyondamber: '#a54521',
