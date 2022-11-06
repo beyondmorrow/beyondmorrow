@@ -31,7 +31,7 @@
     }
     #customRichText :global(h4) {
         @apply text-5xl;
-        @apply my-5;
+        @apply my-8;
         @apply font-northwell;
     }
     #customRichText :global(ul) {
