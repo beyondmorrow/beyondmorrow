@@ -42,8 +42,8 @@
 			link: c.PATH_YOGA
 		},
 		{
-			name: 'Meditation & Klang',
-			link: c.PATH_MEDITATION_SOUND
+			name: 'Nuad & Klang',
+			link: c.PATH_NUAD_SOUND
 		},
 		{
 			name: 'Retreats & Events',

@@ -11,8 +11,8 @@
 			case '/yoga':
 				return {
 					text: "Auf der Suche nach Ruhe? Probier's mal mit ",
-					linkText: 'Meditation',
-					href: c.PATH_MEDITATION_SOUND
+					linkText: 'Nuad & Klang',
+					href: c.PATH_NUAD_SOUND
 				};
 			case '/meditation-klang':
 				return {

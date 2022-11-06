@@ -30,7 +30,7 @@
 		},
 		{
 			name: 'Meditation',
-			link: c.PATH_MEDITATION_SOUND
+			link: c.PATH_NUAD_SOUND
 		},
 		{
 			name: 'Retreats & Events',

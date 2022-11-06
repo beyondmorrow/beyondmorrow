@@ -1,6 +1,6 @@
 export const PATH_ABOUT = '/ueber-mich';
 export const PATH_YOGA = '/yoga';
-export const PATH_MEDITATION_SOUND = '/meditation-klang';
+export const PATH_NUAD_SOUND = '/nuad-klang';
 export const PATH_RETREATS_EVENTS = '/retreats-events';
 export const PATH_CONTACT = '/kontakt';
 export const PATH_FAQ = '/faq';
