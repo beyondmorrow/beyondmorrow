@@ -29,7 +29,7 @@
 			link: c.PATH_YOGA
 		},
 		{
-			name: 'Meditation',
+			name: 'Nuad & Klang',
 			link: c.PATH_NUAD_SOUND
 		},
 		{
