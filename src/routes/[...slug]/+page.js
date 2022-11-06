@@ -24,6 +24,7 @@ import Location from '../../components/nestable/Location.svelte';
 import Prices from '../../components/nestable/Prices.svelte';
 import ButtonGroup from '../../components/nestable/ButtonGroup.svelte';
 import Divider from '../../components/nestable/Divider.svelte';
+import Quote from '../../components/nestable/Quote.svelte'
 
 /**
  * Init Storyblok
@@ -57,6 +58,7 @@ storyblokInit({
     buttonGroup: ButtonGroup,
     button: ButtonGroup,
     divider: Divider,
+    quote: Quote,
   },
 });
 

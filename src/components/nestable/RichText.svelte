@@ -30,7 +30,7 @@
         @apply text-beyondpurple-900;
     }
     #customRichText :global(h4) {
-        @apply text-3xl;
+        @apply text-5xl;
         @apply my-5;
         @apply font-northwell;
     }
