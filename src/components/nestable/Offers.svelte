@@ -10,7 +10,7 @@
 		switch ($page.url.pathname) {
 			case '/yoga':
 				return {
-					text: "Auf der Suche nach Ruhe? Probier's mal mit ",
+					text: "Auf der Suche nach Tiefenentspannung? Probier's mal mit ",
 					linkText: 'Nuad & Klang',
 					href: c.PATH_NUAD_SOUND
 				};
