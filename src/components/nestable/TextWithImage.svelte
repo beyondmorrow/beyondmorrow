@@ -1,5 +1,5 @@
 <script>
-	import Button from '../nestable/Button.svelte';
+	import Button from '../internal/Button.svelte';
 	import RichText from './RichText.svelte';
 
 	export let blok;
@@ -17,7 +17,7 @@
 		<RichText {blok} />
 		{#if displayButton}
 			<div class="text-center mt-12">
-				<Button link={blok.buttonLink.cached_url} text={blok.buttonText} />
+				<Button link={blok.buttonLink} text={blok.buttonText} />
 			</div>
 		{/if}
 	</div>

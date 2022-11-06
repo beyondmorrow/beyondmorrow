@@ -1,7 +1,7 @@
 <script>
 	import { storyblokEditable } from '@storyblok/svelte';
 	import { renderRichText } from '@storyblok/svelte';
-	import Button from '../nestable/Button.svelte';
+	import Button from '../internal/Button.svelte';
 	import Heading from './Heading.svelte';
 
 	export let blok;
@@ -71,7 +71,7 @@
 							<p class="italic">{blok.secondSubheading}</p>
 						</div>
 						<div class="w-full lg:w-2/6 px-4 text-center lg:text-right">
-							<Button link={blok.buttonLink.cached_url} text={blok.buttonText} />
+							<Button link={blok.buttonLink} text={blok.buttonText} />
 						</div>
 					</div>
 				</div>

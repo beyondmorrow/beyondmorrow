@@ -1,7 +1,7 @@
 <script>
 	import { fade, scale, slide } from 'svelte/transition';
 	import { page } from '$app/stores';
-	import Button from '../nestable/Button.svelte';
+	import Button from '../internal/Button.svelte';
 	import * as c from '../../pathConst';
 
 	// Mobile menu

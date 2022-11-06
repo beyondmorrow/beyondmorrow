@@ -1,6 +1,6 @@
 <script>
 	import Heading from "./Heading.svelte";
-    import Button from "./Button.svelte";
+    import Button from "../internal/Button.svelte";
 
     export let blok;
 
@@ -11,7 +11,7 @@
     <Heading {blok} />
     <div class="mx-auto text-center -mt-10 px-4 md:px-10">
         <p class="mb-4">{blok.text}</p>
-        <Button link="/{blok.buttonLink.cached_url}" text="{blok.buttonText}"/>
+        <Button link="{blok.buttonLink}" text="{blok.buttonText}"/>
     </div>
 </div>
 

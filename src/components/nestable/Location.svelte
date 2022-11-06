@@ -1,5 +1,5 @@
 <script>
-	import Button from "../nestable/Button.svelte";
+	import Button from "../internal/Button.svelte";
 
     export let blok;
 </script>
@@ -19,6 +19,6 @@
 	</div>
 
     <div>
-        <Button link="{blok.link.cached_url}" text="In Google Maps öffnen" target="blank"/>
+        <Button link="{blok.link}" text="In Google Maps öffnen" target="blank"/>
     </div>
 </div>

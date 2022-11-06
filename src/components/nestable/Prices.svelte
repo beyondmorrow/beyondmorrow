@@ -1,5 +1,5 @@
 <script>
-	import Button from './Button.svelte';
+	import Button from '../internal/Button.svelte';
 	export let blok;
 </script>
 
@@ -26,7 +26,7 @@
 								<small class="text-gray-600 text-sm">€ {price.priceReduced}*</small>
 							{/if}
 						</h3>
-						<Button link="/{price.buttonLink.cached_url}" text={price.buttonText} />
+						<Button link="{price.buttonLink}" text={price.buttonText} />
 					</div>
 					<div class="p-6">
 						{price.description}
