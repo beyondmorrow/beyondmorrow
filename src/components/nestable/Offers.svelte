@@ -8,13 +8,13 @@
 
 	function alternative() {
 		switch ($page.url.pathname) {
-			case '/yoga':
+			case c.PATH_YOGA:
 				return {
 					text: "Auf der Suche nach Tiefenentspannung? Probier's mal mit ",
 					linkText: 'Nuad & Klang',
 					href: c.PATH_NUAD_SOUND
 				};
-			case '/meditation-klang':
+			case c.PATH_NUAD_SOUND:
 				return {
 					text: "Auf der Suche nach etwas bewegterem? Probier's mal mit ",
 					linkText: 'Yoga',
