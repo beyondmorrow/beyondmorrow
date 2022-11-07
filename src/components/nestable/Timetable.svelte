@@ -11,15 +11,15 @@
 
 {#if ready}
 	<!-- {#if $consent === String(true)} -->
-	
-	<iframe
-		title="fitogram"
-		frameborder="0"
-		src="https://widget.fitogram.pro/beyondmorrow-e-u?fito-embedded=true&w=/calendar"
-		width="100%"
-		height="1000px"
-	/>
-
+	<div class="mb-24">
+		<iframe
+			title="fitogram"
+			frameborder="0"
+			src="https://widget.fitogram.pro/beyondmorrow-e-u?fito-embedded=true&w=/calendar"
+			width="100%"
+			height="1000px"
+		/>
+	</div>
 	<!-- {:else}
 		<div class="mx-auto text-center max-w-xl">
 			<p>
