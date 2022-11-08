@@ -14,7 +14,7 @@
 		<Button text={blok.text} link={blok.link} />
 	{:else}
 		{#each blok.buttons as button}
-			<Button text={button.text} link={button.link} />
+			<Button text={button.text} link={button.link} fixedSize={true} />
 		{/each}
 	{/if}
 </div>
