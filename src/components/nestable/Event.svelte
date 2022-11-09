@@ -42,7 +42,7 @@
 				{#if isPastEvent(blok)}
 					<Button link={c.PATH_RETREATS_EVENTS} text="Zukünftige Events anzeigen" />
 				{:else}
-					<Button link={c.PATH_CONTACT} text="Anmelden" />
+					<Button link={blok.buttonLink} text={blok.buttonText} />
 				{/if}
 			</div>
 		</div>
