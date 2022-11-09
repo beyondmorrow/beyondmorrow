@@ -1,9 +1,9 @@
 <script>
 	import Heading from './Heading.svelte';
-	import { getFormattedDate } from '../../modules/dateHandler';
+	import { getFormattedDate, isPastEvent } from '../../modules/dateHandler';
 	import RichText from './RichText.svelte';
 	import Button from '../internal/Button.svelte';
-	import * as c from '../../pathConst'
+	import * as c from '../../pathConst';
 
 	export let blok;
 
@@ -24,7 +24,11 @@
 				<span>{blok.location}</span>
 			</div>
 			<div class="text-center text-lg">
-				<span>{getFormattedDate(blok, true)}</span>
+				{#if isPastEvent(blok)}
+					<span>Die Veranstaltung ist leider schon vorbei.</span>
+				{:else}
+					<span>{getFormattedDate(blok, true)}</span>
+				{/if}
 			</div>
 			<div class="flex items-center my-5">
 				<div class="flex-grow h-px bg-slate-300" />
@@ -35,7 +39,11 @@
 				<span>{blok.shortDescription}</span>
 			</div>
 			<div class="mt-5 flex justify-center">
-				<Button link="{c.PATH_CONTACT}" text="Anmelden"/>
+				{#if isPastEvent(blok)}
+					<Button link={c.PATH_RETREATS_EVENTS} text="Zukünftige Events anzeigen" />
+				{:else}
+					<Button link={c.PATH_CONTACT} text="Anmelden" />
+				{/if}
 			</div>
 		</div>
 	</div>

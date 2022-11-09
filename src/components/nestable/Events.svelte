@@ -42,7 +42,6 @@
 				{#each events as event}
 					<div
 						class="bg-gradient-to-t from-beyondrose-100 to-white shadow-md"
-						class:pointer-events-none={isPastEvent(event.content.body[0])}
 						class:opacity-30={isPastEvent(event.content.body[0])}
 					>
 						<a href="/{event.full_slug}">
