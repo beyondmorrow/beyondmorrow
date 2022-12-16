@@ -13,7 +13,6 @@ exports.handler = async (event, context) => {
             source = ` - ${source}`;
         }
 
-        console.log("DEBUG " + source)
         client.setApiKey(SENDGRID_API_KEY);
 
         const data = {
