@@ -5,6 +5,7 @@
 	export let target = '_self';
 	export let link = c.PATH_TIMETABLE;
 	export let fixedSize = false;
+	export let source = '';
 
 	if (!link.hasOwnProperty('linktype')) {
 		link = {
@@ -14,6 +15,10 @@
 	}
 
 	function generateLink(link) {
+		if (source !== '') {
+			link.cached_url = link.cached_url.concat(`?source=${source}`);
+		}
+
 		if (link.linktype === 'story') {
 			return '/'.concat(link.cached_url);
 		} else {

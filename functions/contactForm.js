@@ -7,14 +7,19 @@ const {
 
 exports.handler = async (event, context) => {
     try {
-        const { name, surname, email, message } = JSON.parse(event.body);
+        const { name, surname, email, message, source } = JSON.parse(event.body);
+
+        if (source !== '') {
+            source = ` - ${source}`;
+        }
+
         client.setApiKey(SENDGRID_API_KEY);
 
         const data = {
             to: SENDGRID_TO_EMAIL,
             from: SENDGRID_FROM_EMAIL,
             reply_to: email,
-            subject: `Neue Kontaktanfrage von ${name} ${surname} (${email})`,
+            subject: `Neue Kontaktanfrage von ${name} ${surname}${source}`,
             html: message,
         };
 

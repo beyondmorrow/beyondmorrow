@@ -1,4 +1,5 @@
 <script>
+	import { page } from '$app/stores';
 	import Heading from './Heading.svelte';
 	import { getFormattedDate, isPastEvent } from '../../modules/dateHandler';
 	import RichText from './RichText.svelte';
@@ -6,6 +7,8 @@
 	import * as c from '../../pathConst';
 
 	export let blok;
+
+	let source = $page.url.pathname.slice($page.url.pathname.lastIndexOf('/') + 1);
 
 	const richText = {
 		text: blok.description
@@ -42,7 +45,7 @@
 				{#if isPastEvent(blok)}
 					<Button link={c.PATH_RETREATS_EVENTS} text="Zukünftige Events anzeigen" />
 				{:else}
-					<Button link={blok.buttonLink} text={blok.buttonText} />
+					<Button link={blok.buttonLink} text={blok.buttonText} source={source}/>
 				{/if}
 			</div>
 		</div>

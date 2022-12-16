@@ -1,8 +1,15 @@
 <script>
 	import { renderRichText } from '@storyblok/svelte';
 	import * as c from '../../pathConst.js';
+	import { page } from '$app/stores';
 
 	export let blok;
+
+	let source = ''; 
+	// source page for contact form
+	if ($page.url.searchParams.has('source')) {
+		source = $page.url.searchParams.get('source');
+	}
 
 	// Render storyblok rich text to html
 	const answerHTML = renderRichText(blok.answer);
@@ -22,7 +29,8 @@
 				name: formData.get('name').toString(),
 				surname: formData.get('surname').toString(),
 				email: formData.get('email').toString(),
-				message: formData.get('message').toString()
+				message: formData.get('message').toString(),
+				source: source
 			})
 		});
 
