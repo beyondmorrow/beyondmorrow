@@ -7,7 +7,7 @@ const {
 
 exports.handler = async (event, context) => {
     try {
-        const { name, surname, email, message, source } = JSON.parse(event.body);
+        let { name, surname, email, message, source } = JSON.parse(event.body);
 
         if (source !== '') {
             source = ` - ${source}`;
