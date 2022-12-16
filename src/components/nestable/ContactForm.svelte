@@ -23,7 +23,7 @@
 		const formData = new FormData(this);
 
 		// Send contact form
-		const response = await fetch($page.url.origin + '/.netlify/functions/contactForm', {
+		const response = await fetch('/.netlify/functions/contactForm', {
 			method: 'POST',
 			body: JSON.stringify({
 				name: formData.get('name').toString(),
@@ -36,7 +36,7 @@
 
 		// Subscribe to newsletter if checked
 		if (formData.has('subscribeNewsletter')) {
-			const responseNewsletter = await fetch($page.url.origin + '/.netlify/functions/subscribe', {
+			const responseNewsletter = await fetch('/.netlify/functions/subscribe', {
 				method: 'POST',
 				body: JSON.stringify({
 					email: formData.get('email').toString()
