@@ -1,5 +1,6 @@
 <script>
 	import Heading from "../../components/nestable/Heading.svelte";
+	import YouTube from "../../components/nestable/YouTube.svelte";
     import * as c from "../../pathConst";
 
     const heading = {
@@ -10,12 +11,5 @@
 
 <div class="container mx-auto text-center mb-24">
     <Heading blok={heading}  />
-    <div>
-        <ul class="text-lg">
-            <li><a class="underline mb-2" href="{c.PATH_FAQ}">FAQ</a></li>
-            <li><a class="underline mb-2" href="{c.PATH_TIMETABLE}">Stundenplan</a></li>
-            <li><a class="underline mb-2" href="{c.PATH_PRICES}">Preise</a></li>
-            <li><a class="underline mb-2" href="{c.PATH_CONTACT}">Kontakt</a></li>
-        </ul>
-    </div>
+    <YouTube youTubeId="NejGRqVns_w" autoPlay={true}/>
 </div>
