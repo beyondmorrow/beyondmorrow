@@ -4,6 +4,6 @@
     export let blok;
 </script>
 
-<div class="max-w-3xl mx-auto px-5">
+<div class="max-w-[50rem] mx-auto px-3 mb-24">
     <YouTube youTubeId={blok.youTubeId} />
 </div>
