@@ -5,6 +5,6 @@
     export let autoPlay = false;
 </script>
 
-<div class="max-w-3xl mx-auto">
+<div class="max-w-3xl mx-auto px-5">
     <YouTube {youTubeId} {autoPlay}} />
 </div>
