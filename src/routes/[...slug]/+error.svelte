@@ -14,5 +14,7 @@
 
 <div class="container mx-auto text-center mb-24">
     <Heading blok={heading}  />
-    <YouTube blok={youTubeVideo}/>
+    <div class="px-5">
+        <YouTube blok={youTubeVideo}/>
+    </div>
 </div>
