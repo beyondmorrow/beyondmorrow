@@ -26,6 +26,7 @@ import ButtonGroup from '../../components/nestable/ButtonGroup.svelte';
 import Divider from '../../components/nestable/Divider.svelte';
 import Quote from '../../components/nestable/Quote.svelte';
 import YouTube from '../../components/nestable/YouTube.svelte';
+import Spotify from '../../components/nestable/Spotify.svelte';
 
 /**
  * Init Storyblok
@@ -61,6 +62,7 @@ storyblokInit({
     divider: Divider,
     quote: Quote,
     youtube: YouTube,
+    spotify: Spotify,
   },
 });
 
