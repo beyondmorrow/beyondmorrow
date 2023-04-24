@@ -1,5 +1,6 @@
 <script>
 	import { fade, scale, slide } from 'svelte/transition';
+	import { beforeNavigate, afterNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
 	import Button from '../internal/Button.svelte';
 	import * as c from '../../pathConst';
@@ -76,6 +77,19 @@
 			link: c.PATH_CONTACT
 		}
 	];
+
+	// Loading Spinner for mobile menu
+	let loading = false;
+	beforeNavigate(() => {
+		if (displayMobileNav) loading = true;
+	});
+
+	afterNavigate(() => {
+		if (displayMobileNav) {
+			handleMobileNav();
+			loading = false;
+		}
+	});
 </script>
 
 <svelte:head>
@@ -149,7 +163,7 @@
 					</ul>
 				</div>
 				<div class="hidden xl:block ml-14">
-					<Button text="FAQ" link="{c.PATH_FAQ}"/>
+					<Button text="FAQ" link={c.PATH_FAQ} />
 				</div>
 			</div>
 		</div>
@@ -162,78 +176,85 @@
 			out:fade
 			class="fixed top-0 left-0 w-screen h-screen z-50 bg-white overflow-scroll"
 		>
-			<nav class="flex flex-col p-8 ">
-				<div class="flex items-center justify-between mb-12">
-					<a on:click={handleMobileNav} class="items-center" href="/">
-						<img src="/logo/logo-image.png" alt="logo" class="w-14" />
-					</a>
-					<button
-						on:click={handleMobileNav}
-						class="inline-block focus:outline-none"
-						type="button"
-						aria-label="Close"
-					>
-						<img src="/icons/close-button.svg" alt="X" class="w-7" />
-					</button>
-				</div>
-				<div class="text-center">
-					<ul>
-						{#each navEntries as entry}
-							<li class="py-3">
-								{#if entry.hasOwnProperty('submenu')}
-									<div class="flex justify-center items-center">
-										<a
-											on:click={handleMobileNav}
-											class:text-beyondgrey={$page.url.pathname === entry.link}
-											class="inline-block hover:text-gray-900 text-xl pl-4"
-											href={entry.link}>{entry.name}</a
-										>
-										{#if expandedSubmenu}
-											<button on:click={handleMobileSubmenu} class="px-4 py-3">
-												<img class="w-4 mt-0.5" src="/icons/arrow-up.svg" alt="arrow down" />
-											</button>
-										{:else}
-											<button on:click={handleMobileSubmenu} class="px-4 py-3">
-												<img class="w-4 mt-0.5" src="/icons/arrow-down.svg" alt="arrow down" />
-											</button>
-										{/if}
-									</div>
-								{:else}
-									<a
-										on:click={handleMobileNav}
-										class:text-beyondgrey={$page.url.pathname === entry.link}
-										class="inline-block hover:text-gray-900 text-xl"
-										href={entry.link}>{entry.name}</a
-									>
-								{/if}
-								{#if entry.hasOwnProperty('submenu')}
-									{#if expandedSubmenu}
-										<div class="">
-											<ul>
-												{#each entry.submenu as subEntry}
-													<li class="py-1.5">
-														<a
-															on:click={handleMobileNav}
-															class:text-beyondgrey={$page.url.pathname === subEntry.link}
-															class="inline-block hover:text-gray-900 text-base"
-															href={subEntry.link}>{subEntry.name}</a
-														>
-													</li>
-												{/each}
-											</ul>
-										</div>
-									{/if}
-								{/if}
-							</li>
-						{/each}
-					</ul>
-					<div class="mt-5">
-						<div on:click={handleMobileNav}>
-							<Button text="FAQ" link="{c.PATH_FAQ}"/>
-						</div>
+			{#if loading}
+				<!-- LOADING SPINNER -->
+				<div class="h-screen my-auto grid place-content-center">
+					<div class="flex items-center gap-2 text-praxis-beige">
+						<span class="h-12 w-12 block rounded-full border-4 border-t-beyondrose-900 animate-spin" />
 					</div>
 				</div>
-			</nav>
+				d
+			{:else}
+				<nav class="flex flex-col p-8 ">
+					<div class="flex items-center justify-between mb-12">
+						<a class="items-center" href="/">
+							<img src="/logo/logo-image.png" alt="logo" class="w-14" />
+						</a>
+						<button
+							on:click={handleMobileNav}
+							class="inline-block focus:outline-none"
+							type="button"
+							aria-label="Close"
+						>
+							<img src="/icons/close-button.svg" alt="X" class="w-7" />
+						</button>
+					</div>
+					<div class="text-center">
+						<ul>
+							{#each navEntries as entry}
+								<li class="py-3">
+									{#if entry.hasOwnProperty('submenu')}
+										<div class="flex justify-center items-center">
+											<a
+												class:text-beyondgrey={$page.url.pathname === entry.link}
+												class="inline-block hover:text-gray-900 text-xl pl-4"
+												href={entry.link}>{entry.name}</a
+											>
+											{#if expandedSubmenu}
+												<button on:click={handleMobileSubmenu} class="px-4 py-3">
+													<img class="w-4 mt-0.5" src="/icons/arrow-up.svg" alt="arrow down" />
+												</button>
+											{:else}
+												<button on:click={handleMobileSubmenu} class="px-4 py-3">
+													<img class="w-4 mt-0.5" src="/icons/arrow-down.svg" alt="arrow down" />
+												</button>
+											{/if}
+										</div>
+									{:else}
+										<a
+											class:text-beyondgrey={$page.url.pathname === entry.link}
+											class="inline-block hover:text-gray-900 text-xl"
+											href={entry.link}>{entry.name}</a
+										>
+									{/if}
+									{#if entry.hasOwnProperty('submenu')}
+										{#if expandedSubmenu}
+											<div class="">
+												<ul>
+													{#each entry.submenu as subEntry}
+														<li class="py-1.5">
+															<a
+																class:text-beyondgrey={$page.url.pathname === subEntry.link}
+																class="inline-block hover:text-gray-900 text-base"
+																href={subEntry.link}>{subEntry.name}</a
+															>
+														</li>
+													{/each}
+												</ul>
+											</div>
+										{/if}
+									{/if}
+								</li>
+							{/each}
+						</ul>
+						<div class="mt-5">
+							<div>
+								<Button text="FAQ" link={c.PATH_FAQ} />
+							</div>
+						</div>
+					</div>
+				</nav>
+			{/if}
 		</div>
 	{/if}
 </section>
