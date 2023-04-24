@@ -32,12 +32,11 @@
 	}
 </script>
 
-{#if $consent === String(true) || $consent === String(false)}
-	<div
-		on:click={scrollToTop}
-		id="backToTopButton"
-		class="fixed bottom-3 right-3 md:bottom-6 md:right-6 w-10 h-10 md:w-16 md:h-16 bg-beyondpurple-800 hover:bg-beyondpurple-900 hover:cursor-pointer bg-opacity-25 hover:bg-opacity-30 z-10 hidden justify-center items-center rounded-sm shadow-md"
-	>
-		<img class="invert" src="/icons/arrow-up.svg" alt="arrow up" />
-	</div>
-{/if}
+<div
+	on:click={scrollToTop}
+	id="backToTopButton"
+	class="fixed bottom-3 right-3 md:bottom-6 md:right-6 w-10 h-10 md:w-16 md:h-16 bg-beyondpurple-800 hover:bg-beyondpurple-900 hover:cursor-pointer bg-opacity-25 hover:bg-opacity-30 z-10 hidden justify-center items-center rounded-sm shadow-md"
+	class:invisible={($consent !== String(true) && $consent !== String(false))}
+>
+	<img class="invert" src="/icons/arrow-up.svg" alt="arrow up" />
+</div>
