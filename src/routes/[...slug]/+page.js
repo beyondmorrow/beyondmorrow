@@ -1,4 +1,5 @@
 import { initStoryblok } from "../../storyblok";
+import loadData from "../../storyblok" //remove workaround
 
 initStoryblok();
 
