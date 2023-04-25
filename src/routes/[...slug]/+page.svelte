@@ -24,7 +24,7 @@
 			}
 			gtag('js', new Date());
 
-			gtag('config', 'G-5HWRZDBCQ2');
+			gtag('config', 'G-5HWRZDBCQ2', { 'anonymize_ip': true });
 		</script>
 	{/if}
 </svelte:head>
