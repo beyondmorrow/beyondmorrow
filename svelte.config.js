@@ -8,10 +8,11 @@ const config = {
 		prerender: {
 			handleHttpError: 'warn',
 			handleMissingId: 'warn',
+			crawl: true,
 			entries: [
 				'/', '/ueber-mich', '/yoga', '/nuad-klang', '/retreats-events', '/studio',
 				'/studio/stundenplan', '/studio/preise', '/studio/lehrerinnen', '/studio/etiquette',
-				'/kontakt/', '/faq', '/impressum', '/agb', '/datenschutz', '/retreats-events/slow-down-herbstretreat'
+				'/kontakt/', '/faq', '/impressum', '/agb', '/datenschutz'
 			]
 		},
 	},
