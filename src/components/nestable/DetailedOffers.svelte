@@ -48,7 +48,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="mt-5 text-center">
+				<div class="mt-5 flex justify-center gap-3 items-center">
 					<Button link={offer.callToActionLink} text={offer.callToAction} source={offer.anchor} />
 					<a class="ml-3 underline" href={c.PATH_PRICES}>Zu den Preisen</a>
 				</div>
