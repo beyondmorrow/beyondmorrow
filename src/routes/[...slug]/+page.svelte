@@ -12,7 +12,7 @@
 
 <svelte:head>
 	<title>beyondmorrow - {data.story.name}</title>
-	<meta name="description" content={data.story.metaDescription} />
+	<meta name="description" content="{data.story.metaDescription}" />
 
 	{#if $consent === String(true)}
 		<!-- Google tag (gtag.js) -->
