@@ -5,6 +5,15 @@ import adapter from '@sveltejs/adapter-netlify';
 const config = {
 	kit: {
 		adapter: adapter(),
+		prerender: {
+			handleHttpError: 'warn',
+			handleMissingId: 'warn',
+			entries: [
+				'/', '/ueber-mich', '/yoga', '/nuad-klang', '/retreats-events', '/studio',
+				'/studio/stundenplan', '/studio/preise', '/studio/lehrerinnen', '/studio/etiquette',
+				'/kontakt/', '/faq', '/impressum', '/agb', '/datenschutz'
+			]
+		},
 	},
 
 	preprocess: [
