@@ -1,5 +1,6 @@
 import { storyblokInit, apiPlugin, useStoryblokApi } from "@storyblok/svelte";
 import { PUBLIC_STORYBLOK_TOKEN } from '$env/static/public';
+import * as c from './pathConst';
 
 import GenericPage from './components/contentType/GenericPage.svelte';
 import EventPage from './components/contentType/EventPage.svelte';
@@ -69,9 +70,18 @@ export function initStoryblok() {
 }
 
 export default async function loadData(params) {
+    const slug = params.slug;
+
+    return {
+        ... await loadStory(slug),
+        // At the moment, the events component is only supported on the home and retreats-event pages
+        ... ((slug === 'retreats-events' || !slug) && await loadEvents())
+    }
+}
+
+async function loadStory(slug) {
     const storyblokApi = useStoryblokApi();
 
-    let slug = params.slug;
     let path = 'cdn/stories/';
 
     if (slug) {
@@ -84,7 +94,24 @@ export default async function loadData(params) {
         version: "published",
     });
 
-    return {
-        story: data.story
-    }
+    return { story: data.story };
+}
+
+async function loadEvents() {
+    const storyblokApi = useStoryblokApi();
+
+    const { data } = await storyblokApi.get('cdn/stories/', {
+        version: 'published',
+        starts_with: c.PATH_RETREATS_EVENTS.substring(1),
+        is_startpage: 0, // Exclude Retreats & Events Overview Page
+        per_page: 20,
+        sort_by: 'content.startingDate:desc',
+        filter_query: {
+            component: {
+                in: 'eventPage'
+            },
+        }
+    })
+
+    return { events: data.stories };
 }
