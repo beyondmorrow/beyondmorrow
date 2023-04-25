@@ -1,5 +1,6 @@
 <script>
 	import { renderRichText } from '@storyblok/svelte';
+	import { browser } from '$app/environment';
 	import * as c from '../../pathConst.js';
 	import { page } from '$app/stores';
 
@@ -7,7 +8,7 @@
 
 	let source = ''; 
 	// source page for contact form
-	if ($page.url.searchParams.has('source')) {
+	if (browser && $page.url.searchParams.has('source')) {
 		source = $page.url.searchParams.get('source');
 	}
 
