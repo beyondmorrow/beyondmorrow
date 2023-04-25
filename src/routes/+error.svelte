@@ -1,6 +1,6 @@
 <script>
-	import Heading from "../../components/nestable/Heading.svelte";
-	import YouTube from "../../components/nestable/YouTube.svelte";
+	import Heading from "../components/nestable/Heading.svelte";
+	import YouTube from "../components/nestable/YouTube.svelte";
 
     const heading = {
         heading: '404',
