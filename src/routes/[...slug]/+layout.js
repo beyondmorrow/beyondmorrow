@@ -1,3 +1,3 @@
-import { initStoryblok } from "../../storyblok";
+import { initStoryblok } from "../../modules/storyblok";
 
 initStoryblok();

@@ -1,5 +1,5 @@
-import { initStoryblok } from "../../storyblok";
-import loadData from "../../storyblok"
+import { initStoryblok } from "../../modules/storyblok";
+import loadData from "../../modules/storyblok"
 
 // SSG
 export const prerender = true;
