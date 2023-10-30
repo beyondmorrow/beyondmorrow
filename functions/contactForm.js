@@ -12,7 +12,7 @@ exports.handler = async (event, context) => {
 
         let displaySource = source !== '' ? ` - ${source}` : '';
 
-        client.setApiKey(SENDGRID_API_KEY);
+        MailService.setApiKey(SENDGRID_API_KEY);
 
         const data = {
             to: SENDGRID_TO_EMAIL,
@@ -22,7 +22,7 @@ exports.handler = async (event, context) => {
             html: message,
         };
 
-        await client.send(data);
+        await MailService.send(data);
         
         return {
             statusCode: 200,
