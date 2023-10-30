@@ -1,4 +1,5 @@
-const client = require('@sendgrid/mail');
+import MailService from '@sendgrid/mail'
+
 const {
     SENDGRID_API_KEY,
     SENDGRID_TO_EMAIL,
