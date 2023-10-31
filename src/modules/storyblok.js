@@ -28,6 +28,7 @@ import Divider from '../components/nestable/Divider.svelte';
 import Quote from '../components/nestable/Quote.svelte';
 import YouTube from '../components/nestable/YouTube.svelte';
 import SpotifySection from '../components/nestable/SpotifySection.svelte';
+import Gallery from "../components/nestable/Gallery.svelte";
 
 /**
  * Init Storyblok
@@ -65,6 +66,7 @@ export function initStoryblok() {
             quote: Quote,
             youtube: YouTube,
             spotifySection: SpotifySection,
+            gallery: Gallery,
         },
     });
 }
@@ -115,3 +117,15 @@ async function loadEvents() {
 
     return { events: data.stories };
 }
+
+/**
+     * Return image dimensions for a storyblok image url
+     *
+     * @param url
+     */
+export function getImageDimensions(url) {
+    return {
+        width: url.split("/")[5].split("x")[0],
+        height: url.split("/")[5].split("x")[1],
+    };
+};
