@@ -34,6 +34,7 @@
 		"@sendgrid/mail": "^7.7.0",
 		"@storyblok/svelte": "^2.3.0",
 		"@vitejs/plugin-basic-ssl": "^1.0.1",
-		"crypto": "^1.0.1"
+		"crypto": "^1.0.1",
+		"mailtrap": "^3.2.0"
 	}
 }
